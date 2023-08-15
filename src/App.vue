@@ -13,8 +13,7 @@ import TheFooter from "@/components/TheFooter";
 export default {
   components: {TheFooter, TheNavbar},
   setup(){
-    const apiUrl = 'http://localhost:8000';
-
+    const apiUrl = 'https://panel.copa.webagent.ir'
     return{
       apiUrl,
     }
