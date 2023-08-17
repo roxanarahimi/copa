@@ -74,7 +74,7 @@ export default {
       data.value = [];
       axios.get(app.setup().apiUrl + '/api/article')
           .then((response) => {
-            data.value = response.data;
+            data.value = response.data.data;
           })
           .catch((error) => { console.log(error) })
     };

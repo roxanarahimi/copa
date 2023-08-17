@@ -1,9 +1,9 @@
 <template>
   <div class="px-lg-5" style=" margin-bottom: 50px" >
-    <Carousel class="d-none d-xl-block" :itemsToShow="4.0" :autoplay="500" :transition="2000" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'">
-      <Slide v-for="slide in 10" :key="slide">
+    <Carousel class="d-none d-xl-block" :itemsToShow="4.0" :itemsToScroll="1" :wrapAround="false" :snapAlign="'start'">
+      <Slide v-for="slide in products" :key="slide">
         <div class="carousel__item">
-          <product-card />
+          <product-card :product="slide" />
         </div>
       </Slide>
       <template #addons>
@@ -11,10 +11,10 @@
         <!--       <Pagination />-->
       </template>
     </Carousel>
-    <Carousel class="d-none d-lg-block d-xl-none" :itemsToShow="3.0"  :autoplay="500" :transition="2000" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'">
-      <Slide v-for="slide in 10" :key="slide">
+    <Carousel class="d-none d-lg-block d-xl-none" :itemsToShow="3.0"  :itemsToScroll="1" :wrapAround="false" :snapAlign="'start'">
+      <Slide v-for="slide in products" :key="slide">
         <div class="carousel__item">
-          <product-card />
+          <product-card :product="slide" />
         </div>
       </Slide>
       <template #addons>
@@ -22,10 +22,10 @@
         <!--       <Pagination />-->
       </template>
     </Carousel>
-    <Carousel class="d-none d-sm-block d-lg-none" :itemsToShow="2.0"  :autoplay="500" :transition="2000" :itemsToScroll="1" :wrapAround="true" :snapAlign="'start'">
-      <Slide v-for="slide in 10" :key="slide">
+    <Carousel class="d-none d-sm-block d-lg-none" :itemsToShow="2.0"  :itemsToScroll="1" :wrapAround="false" :snapAlign="'start'">
+      <Slide v-for="slide in products" :key="slide">
         <div class="carousel__item">
-          <product-card />
+          <product-card :product="slide" />
         </div>
       </Slide>
       <template #addons>
@@ -33,10 +33,10 @@
         <!--       <Pagination />-->
       </template>
     </Carousel>
-    <Carousel class="d-sm-none" :itemsToShow="1.0" :itemsToScroll="1" :autoplay="500" :transition="2000" :wrapAround="true" :snapAlign="'start'">
-      <Slide v-for="slide in 10" :key="slide">
+    <Carousel class="d-sm-none" :itemsToShow="1.0" :itemsToScroll="1" :wrapAround="false" :snapAlign="'start'">
+      <Slide v-for="slide in products" :key="slide">
         <div class="carousel__item">
-          <product-card />
+          <product-card :product="slide" />
         </div>
       </Slide>
       <template #addons>
@@ -51,9 +51,18 @@
 
 <script >
 import productCard from "../components/ProductCard";
+import 'vue3-carousel/dist/carousel.css';
+import {Carousel, Slide, Pagination, Navigation} from 'vue3-carousel';
 
 export default {
-  components: { productCard },
+  props:['products'],
+  components: {
+    productCard,
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation
+  },
   mounted() {
     document.querySelectorAll('.carousel__icon').forEach((element)=>{
       element.setAttribute('viewBox', '0 0 17 17')

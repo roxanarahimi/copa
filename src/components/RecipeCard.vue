@@ -1,9 +1,9 @@
 <template>
-  <router-link to="/recipe/1">
+  <router-link :to="'/recipe/'+recipe.id">
   <div class="recipe-card mb-3">
-    <img class="img-fluid w-100 recipe-card-img w-100 h-100" src="/img/image7.png" alt="">
+    <img class="img-fluid w-100 recipe-card-img w-100 h-100" :src="url+recipe.thumb" alt="">
     <div class="recipe-card-title-back"></div>
-    <div class="recipe-card-title"><h5>اسم دسر</h5><p>محصول مورد نظر</p></div>
+    <div class="recipe-card-title"><h5>{{ recipe.title }}</h5><p>{{ recipe.product?.title }}</p></div>
     <div class="recipe-card-play">
       <i class="bi bi-play-fill"></i>
     </div>
@@ -12,7 +12,17 @@
 </template>
 
 <script>
+import app from "@/App";
 export default {
+  props: [ 'recipe' ],
+  components: { app },
+  setup(){
+    const url = app.setup().apiUrl;
+
+    return{
+      url
+    }
+  }
 
 }
 </script>

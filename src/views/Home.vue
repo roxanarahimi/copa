@@ -35,14 +35,14 @@
 
       </div>
       <div class="col-6 col-sm-6 col-md-4 col-lg-3 p-2 mb-3" :class="{'d-md-none d-lg-block': index === 3}"
-           v-for="(item, index) in 4" :key="index">
-        <recipe-card/>
+           v-for="(item, index) in foodSlides" :key="index">
+        <recipe-card :recipe="item.article"/>
       </div>
 
 
       <div class="text-center p-5">
         <button class="btn btn-outline-light px-lg-5  ">
-          دسر های بیشتر
+          رسپی های بیشتر
         </button>
       </div>
 
@@ -56,16 +56,31 @@
 
 import categorySlider from '@/components/CategorySlider'
 import recipeCard from '@/components/RecipeCard'
+import {onMounted, ref} from "vue";
+import app from "@/App";
 
 export default {
   name: 'Home',
   components: {
-    categorySlider, recipeCard
+    categorySlider, recipeCard, app
   },
   setup(){
 
+    const foodSlides = ref()
+    const getFoodSlides = ()=>{
+      axios.get(app.setup().apiUrl + '/api/food/slides')
+          .then((response) => {
+            foodSlides.value = response.data;
+            console.log(foodSlides.value)
+          })
+          .catch();
+    }
+    onMounted(()=>{
+      getFoodSlides();
+    })
     return{
 
+      foodSlides
     }
   }
 
