@@ -211,6 +211,8 @@ a, a:hover {
     background-color: transparent;
     border: 3px solid white;
     padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
 }
 
 .recipe-card {
@@ -530,7 +532,21 @@ main {
     font-family: BYekan !important;
     text-align: center;
     display: grid;
-    color: #fec700;}
+    color: #fec700;
+}
+.infography-h1{
+    font-size: 80px;
+    font-weight: 800;
+}
+.infography-p1{
+    font-size: 45px;
+}
+.infography-p2{
+    font-size: 40px;
+}
+.infography-p3{
+    font-size: 40px;
+}
 
 @media (max-width: 700px) {
     .parallax6 {
@@ -546,6 +562,21 @@ main {
     }
     .infography{
         background: url('/img/s3.jpg') center center no-repeat;
+        background-size: cover;
+        height: calc( 100vh - 60px);
+    }
+    .infography-h1{
+        font-size: 40px;
+        font-weight: 800;
+    }
+    .infography-p1{
+        font-size: 23px;
+    }
+    .infography-p2{
+        font-size: 22px;
+    }
+    .infography-p3{
+        font-size: 23px;
     }
 }
 .contents-area{

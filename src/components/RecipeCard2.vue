@@ -1,10 +1,10 @@
 <template>
   <router-link class="" :to="'/recipe/1'">
-    <div class="p-3">
+    <div class="p-lg-3">
       <div class="recipe-card mb-3 text-center" style="background-color: #00a388">
 
 
-        <div class="w-100 p-5 mb-5">
+        <div class="w-100 p-3 p-lg-5 mb-3 mb-lg-5">
           <img class="w-100 h-100 mx-auto" style="border-radius: 50%" :src="'/img/image8.png'" alt="">
         </div>
 

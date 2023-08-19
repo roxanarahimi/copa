@@ -11,10 +11,10 @@
     </div>
     <div class="infography" style="">
       <div style="align-self: center">
-        <p style="font-size: 45px">فقـط خــواسـتیم بدونیـــد متعهـدیم</p>
-        <h1 style="font-size: 80px;font-weight: 800">از بهترین مواد اولیه</h1>
-        <p style="font-size: 40px">تو مــحصولات مــورد علاقــه شــما برای</p>
-        <p style="font-size: 40px">هـــرســلیقه اســتفــاده می کـــنـــیم</p>
+        <p class="infography-p1" >فقـط خــواسـتیم بدونیـــد متعهـدیم</p>
+        <h1  class="infography-h1" >از بهترین مواد اولیه</h1>
+        <p  class="infography-p2" >تو مــحصولات مــورد علاقــه شــما برای</p>
+        <p   class="infography-p3">هـــرســلیقه اســتفــاده می کـــنـــیم</p>
       </div>
     </div>
 
@@ -44,9 +44,9 @@
 
 
       <div class="text-center p-5">
-        <button class="btn btn-outline-light px-lg-5  ">
+        <router-link to="/recipes" class="btn btn-outline-light px-lg-5  ">
           رسپی های بیشتر
-        </button>
+        </router-link>
       </div>
 
     </div>

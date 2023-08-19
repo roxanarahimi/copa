@@ -1,7 +1,7 @@
 <template>
 <!--  <i class="bi bi-search " style="font-size: 35px"></i>-->
   <header class="p-0" style="z-index: 100000; position: fixed">
-    <nav id="nav" class="navbar d-none d-md-block navbar-expand navbar-dark px-xl-5" style="background: transparent; color: white">
+    <nav id="nav" class="navbar d-none d-lg-block navbar-expand navbar-dark px-xl-5" style="background: transparent; color: white">
       <div class="container-fluid">
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,10 +21,10 @@
               <div class="li-cover"></div>
               <router-link to="/recipes" class="nav-link nav-link-white">دستور پخت</router-link>
             </li>
-            <li class="nav-item">
-              <div class="li-cover"></div>
-              <router-link to="/about"  class="nav-link nav-link-white">درباره ما</router-link>
-            </li>
+<!--            <li class="nav-item">-->
+<!--              <div class="li-cover"></div>-->
+<!--              <router-link to="/about"  class="nav-link nav-link-white">درباره ما</router-link>-->
+<!--            </li>-->
 
             <li class="nav-item">
               <div class="li-cover"></div>
@@ -36,14 +36,14 @@
           </div>
           <div class="col-lg-5 nav-logo d-none  px-lg-0 d-flex justify-content-end ">
             <div class="d-flex">
-<!--              <input type="text" class="form-control my-2 rounded-0" id="search" style="height: 40px">-->
+              <input type="text" class="form-control my-2 rounded-0" id="search" style="height: 40px">
               <span class="mx-2 mt-2 cursor-pointer"><i class="bi bi-search text-black" style="font-size: 35px"></i></span>
             </div>
           </div>
         </div>
       </div>
     </nav>
-    <div id="nav-mobile" style="position: fixed; top:0" class="d-md-none row p-0 m-0 w-100">
+    <div id="nav-mobile" style="position: fixed; top:0" class="d-lg-none row p-0 m-0 w-100">
       <div class="col-4">
         <button class="btn border-0 nav-mobile-btn" @click="sideMenuToggle" data-flag="0"  style="font-size: 30px !important" type="button">
           <i class="bi bi-list i-list text-light"></i>
@@ -65,11 +65,11 @@
       </div>
       <div  class="side-menu-body d-grid" style="height: calc(100vh - 150px)">
         <ul class="side-menu-ul">
-          <li><router-link class=" side-menu-navlink" to="/"><img src="/img/house.png" class="m-2" alt="">خانه</router-link></li>
-          <li><router-link class=" side-menu-navlink" to="/products"><img src="/img/cookie.png" class="m-2" alt="">محصولات</router-link></li>
-          <li><router-link class=" side-menu-navlink" to="/recipes"><img src="/img/cake.png" class="m-2" alt="">دستور پخت</router-link></li>
-          <li><router-link class=" side-menu-navlink" to="/about"><img src="/img/people.png" class="m-2" alt="">درباره ما</router-link></li>
-          <li><router-link class=" side-menu-navlink" to="/about"><img src="/img/people.png" class="m-2" alt="">تیزر ها</router-link></li>
+          <li @click="sideMenuToggle"><router-link class=" side-menu-navlink" to="/"><img src="/img/house.png" class="m-2" alt="">خانه</router-link></li>
+          <li @click="sideMenuToggle"><router-link class=" side-menu-navlink" to="/products"><img src="/img/cookie.png" class="m-2" alt="">محصولات</router-link></li>
+          <li @click="sideMenuToggle"><router-link class=" side-menu-navlink" to="/recipes"><img src="/img/cake.png" class="m-2" alt="">دستور پخت</router-link></li>
+<!--          <li @click="sideMenuToggle"><router-link class=" side-menu-navlink" to="/about"><img src="/img/people.png" class="m-2" alt="">درباره ما</router-link></li>-->
+          <li @click="sideMenuToggle"><router-link class=" side-menu-navlink" to="/trasers"><img src="/img/people.png" class="m-2" alt="">تیزر ها</router-link></li>
         </ul>
 
         <div class="side-menu-footer">
@@ -89,7 +89,6 @@
   </header>
 <div class="p-2 w-100 search-area" style="position: fixed; left:0; top:55px;transition:all 1s ease; z-index:2000; opacity: 0">
   <input type="text" class="form-control ">
-
 </div>
 </template>
 
@@ -191,10 +190,10 @@ export default {
   position: relative ;
 }
 .side-menu-navlink{
-  font-size: 23px !important;
+  font-size: 21px !important;
 }
 .side-menu-navlink img{
-  width: 40px !important;
+  width: 30px !important;
   margin-right: 35px !important;
 }
 </style>
