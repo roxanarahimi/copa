@@ -1,17 +1,17 @@
 <template>
   <main class="container-fluid p-0 m-0">
     <div class="parallax1 row p-0 m-0">
-<!--      <video class="d-none d-md-block parallax1-video p-0" autoplay muted loop preload="auto" >-->
-<!--        <source src="/vdo/hero.mp4" type="video/mp4">-->
-<!--      </video>-->
-<!--      <video class=" d-md-none parallax1-video-mobile p-0" autoplay muted loop preload="auto">-->
-<!--        <source src="/vdo/hero-mobile.mp4" type="video/mp4">-->
-<!--      </video> -->
-      <video autoplay muted loop preload="auto" id="27a76685-cc8f-498d-8028-a8e49de2e995" data-cld-font-face="inherit" data-cld-played-event-times="[1]"
-             class="d-none d-md-block parallax1-video vjs-tech p-0" style="font-family: inherit;" tabindex="-1" role="application"  poster="https://res-console.cloudinary.com/dw4cidvdw/thumbnails/transform/v1/video/upload/Y19saW1pdCxoXzE2MDAsd18xNjAwLGR1XzEw/v1/cHAxdnV3YWVpdWZ4bm4xb3pldHM=/template_primary" src="https://res.cloudinary.com/dw4cidvdw/video/upload/v1692470037/pp1vuwaeiufxnn1ozets.mp4"></video>
+      <video class="d-none d-md-block parallax1-video p-0" autoplay muted loop preload="auto" >
+        <source src="/vdo/hero.mp4" type="video/mp4">
+      </video>
+      <video class=" d-md-none parallax1-video-mobile p-0" autoplay muted loop preload="auto">
+        <source src="/vdo/hero-mobile.mp4" type="video/mp4">
+      </video>
+<!--      <video autoplay muted loop preload="auto" id="27a76685-cc8f-498d-8028-a8e49de2e995" data-cld-font-face="inherit" data-cld-played-event-times="[1]"-->
+<!--             class="d-none d-md-block parallax1-video vjs-tech p-0" style="font-family: inherit;" tabindex="-1" role="application"  poster="https://res-console.cloudinary.com/dw4cidvdw/thumbnails/transform/v1/video/upload/Y19saW1pdCxoXzE2MDAsd18xNjAwLGR1XzEw/v1/cHAxdnV3YWVpdWZ4bm4xb3pldHM=/template_primary" src="https://res.cloudinary.com/dw4cidvdw/video/upload/v1692470037/pp1vuwaeiufxnn1ozets.mp4"></video>-->
 
-      <video id="c3d24972-a07e-4258-9e6f-bc1cb8c815d5" data-cld-font-face="inherit" data-cld-played-event-times="[1]"
-             class="d-md-none parallax1-video-mobile vjs-tech p-0" style="font-family: inherit;" tabindex="-1" role="application"  poster="https://res-console.cloudinary.com/dw4cidvdw/thumbnails/transform/v1/video/upload/Y19saW1pdCxoXzE2MDAsd18xNjAwLGR1XzEw/v1/dGZsbGd4ZXYzcnFzd3l4Mnh5ZjM=/template_primary" src="https://res.cloudinary.com/dw4cidvdw/video/upload/v1692470417/tfllgxev3rqswyx2xyf3.mp4"></video>
+<!--      <video id="c3d24972-a07e-4258-9e6f-bc1cb8c815d5" data-cld-font-face="inherit" data-cld-played-event-times="[1]"-->
+<!--             class="d-md-none parallax1-video-mobile vjs-tech p-0" style="font-family: inherit;" tabindex="-1" role="application"  poster="https://res-console.cloudinary.com/dw4cidvdw/thumbnails/transform/v1/video/upload/Y19saW1pdCxoXzE2MDAsd18xNjAwLGR1XzEw/v1/dGZsbGd4ZXYzcnFzd3l4Mnh5ZjM=/template_primary" src="https://res.cloudinary.com/dw4cidvdw/video/upload/v1692470417/tfllgxev3rqswyx2xyf3.mp4"></video>-->
 
 
     </div>
