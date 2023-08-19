@@ -9,24 +9,27 @@
       </video>
 
     </div>
-
-
     <div class="infography" style="">
-
+      <div style="align-self: center">
+        <p style="font-size: 45px">فقـط خــواسـتیم بدونیـــد متعهـدیم</p>
+        <h1 style="font-size: 80px;font-weight: 800">از بهترین مواد اولیه</h1>
+        <p style="font-size: 40px">تو مــحصولات مــورد علاقــه شــما برای</p>
+        <p style="font-size: 40px">هـــرســلیقه اســتفــاده می کـــنـــیم</p>
+      </div>
     </div>
 
     <div class="parallax2">
       <div class="row h-100">
         <div class="col-lg-12 text-center d-grid">
 
-          <div class="" style="align-self: end">
-            <button class="parallax2-btn ">
-              توضیحات بیشتر
-            </button>
+          <div class="" style="align-self: center">
+            <h1 class="parallax2-h1">با کوپا روزت را بساز</h1>
+            <button class="parallax2-btn "> توضیحات بیشتر</button>
           </div>
         </div>
       </div>
     </div>
+
 
 
     <div class="container-fluid p-0 m-0 row px-md-5 pb-5 justify-content-between" style="background-color: #006651">
@@ -35,8 +38,8 @@
 
       </div>
       <div class="col-6 col-sm-6 col-md-4 col-lg-3 p-2 mb-3" :class="{'d-md-none d-lg-block': index === 3}"
-           v-for="(item, index) in foodSlides" :key="index">
-        <recipe-card :recipe="item.article"/>
+           v-for="(item, index) in 4" :key="index">
+        <recipe-card />
       </div>
 
 
@@ -47,6 +50,9 @@
       </div>
 
     </div>
+
+
+    <logo-slider />
   </main>
 
 </template>
@@ -55,13 +61,15 @@
 // @ is an alias to /src
 
 import categorySlider from '@/components/CategorySlider'
-import recipeCard from '@/components/RecipeCard'
+import recipeCard from '@/components/RecipeCard2'
 import {onMounted, ref} from "vue";
 import app from "@/App";
+import LogoSlider from "@/components/LogoSlider";
 
 export default {
   name: 'Home',
   components: {
+    LogoSlider,
     categorySlider, recipeCard, app
   },
   setup(){

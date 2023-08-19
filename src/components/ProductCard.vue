@@ -4,7 +4,7 @@
      <div class="product-card border mb-3">
        <div id="frame" class="product-card-img-bg mx-auto py-md-4" style="overflow:hidden; position:relative; background: url('/img/back.png'); ">
          <img id="p1" src="/img/mmm.png" style=" filter:blur(35px);width: 150%; height:150%; position: absolute; top: -17%; left: -17%" >
-         <img class="product-card-img mx-auto img-fluid" :src="url+product.image" alt="">
+         <img class="product-card-img mx-auto img-fluid" :src="url+product.thumb" alt="">
        </div>
        <div class="product-card-footer">
          <p class="fw-bold text-black">{{ product.title}}</p>

@@ -39,6 +39,11 @@ const routes = [
         props: true,
         component: () => import(/* webpackChunkName: "recipe" */ '../views/Recipe')
     },
+    {
+        path: '/teasers',
+        name: 'teasers',
+        component: () => import(/* webpackChunkName: "teasers" */ '../views/Teasers')
+    },
 ]
 
 const router = createRouter({

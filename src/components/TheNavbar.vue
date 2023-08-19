@@ -17,13 +17,18 @@
 
               <router-link to="/products" class="nav-link nav-link-white" >محصولات</router-link>
             </li>
-            <li class="nav-item">              <div class="li-cover"></div>
-
+            <li class="nav-item">
+              <div class="li-cover"></div>
               <router-link to="/recipes" class="nav-link nav-link-white">دستور پخت</router-link>
             </li>
-            <li class="nav-item">              <div class="li-cover"></div>
-
+            <li class="nav-item">
+              <div class="li-cover"></div>
               <router-link to="/about"  class="nav-link nav-link-white">درباره ما</router-link>
+            </li>
+
+            <li class="nav-item">
+              <div class="li-cover"></div>
+              <router-link to="/teasers"  class="nav-link nav-link-white">تیزر ها</router-link>
             </li>
           </ul>
           <div  class="nav-logo d-none col-lg-2 text-center" style="position: relative">
@@ -59,12 +64,12 @@
 
       </div>
       <div  class="side-menu-body d-grid" style="height: calc(100vh - 150px)">
-
         <ul class="side-menu-ul">
           <li><router-link class=" side-menu-navlink" to="/"><img src="/img/house.png" class="m-2" alt="">خانه</router-link></li>
           <li><router-link class=" side-menu-navlink" to="/products"><img src="/img/cookie.png" class="m-2" alt="">محصولات</router-link></li>
           <li><router-link class=" side-menu-navlink" to="/recipes"><img src="/img/cake.png" class="m-2" alt="">دستور پخت</router-link></li>
           <li><router-link class=" side-menu-navlink" to="/about"><img src="/img/people.png" class="m-2" alt="">درباره ما</router-link></li>
+          <li><router-link class=" side-menu-navlink" to="/about"><img src="/img/people.png" class="m-2" alt="">تیزر ها</router-link></li>
         </ul>
 
         <div class="side-menu-footer">
