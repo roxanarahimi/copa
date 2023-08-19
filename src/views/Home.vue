@@ -1,10 +1,10 @@
 <template>
   <main class="container-fluid p-0 m-0">
     <div class="parallax1 row p-0 m-0">
-      <video class="d-none d-md-block parallax1-video p-0 " autoplay muted loop>
+      <video class="d-none d-md-block parallax1-video p-0" autoplay muted loop preload="auto" >
         <source src="/vdo/hero.mp4" type="video/mp4">
       </video>
-      <video class=" d-md-none parallax1-video-mobile p-0 " autoplay muted loop>
+      <video class=" d-md-none parallax1-video-mobile p-0" autoplay muted loop preload="auto">
         <source src="/vdo/hero-mobile.mp4" type="video/mp4">
       </video>
 
