@@ -1,19 +1,15 @@
 <template>
   <main class="container-fluid p-0 m-0">
     <div class="parallax1 row p-0 m-0">
-      <video class="d-none d-md-block parallax1-video p-0" autoplay muted loop preload="auto" >
-        <source src="/vdo/hero.mp4" type="video/mp4">
-      </video>
-      <video class=" d-md-none parallax1-video-mobile p-0" autoplay muted loop preload="auto">
-        <source src="/vdo/hero-mobile.mp4" type="video/mp4">
-      </video>
-<!--      <video autoplay muted loop preload="auto" id="27a76685-cc8f-498d-8028-a8e49de2e995" data-cld-font-face="inherit" data-cld-played-event-times="[1]"-->
-<!--             class="d-none d-md-block parallax1-video vjs-tech p-0" style="font-family: inherit;" tabindex="-1" role="application"  poster="https://res-console.cloudinary.com/dw4cidvdw/thumbnails/transform/v1/video/upload/Y19saW1pdCxoXzE2MDAsd18xNjAwLGR1XzEw/v1/cHAxdnV3YWVpdWZ4bm4xb3pldHM=/template_primary" src="https://res.cloudinary.com/dw4cidvdw/video/upload/v1692470037/pp1vuwaeiufxnn1ozets.mp4"></video>-->
+<!--      <video class="d-none d-md-block parallax1-video p-0" autoplay muted loop preload="auto" >-->
+<!--        <source src="/vdo/hero.mp4" type="video/mp4">-->
+<!--      </video>-->
+<!--      <video class=" d-md-none parallax1-video-mobile p-0" autoplay muted loop preload="auto">-->
+<!--        <source src="/vdo/hero-mobile.mp4" type="video/mp4">-->
+<!--      </video>-->
 
-<!--      <video id="c3d24972-a07e-4258-9e6f-bc1cb8c815d5" data-cld-font-face="inherit" data-cld-played-event-times="[1]"-->
-<!--             class="d-md-none parallax1-video-mobile vjs-tech p-0" style="font-family: inherit;" tabindex="-1" role="application"  poster="https://res-console.cloudinary.com/dw4cidvdw/thumbnails/transform/v1/video/upload/Y19saW1pdCxoXzE2MDAsd18xNjAwLGR1XzEw/v1/dGZsbGd4ZXYzcnFzd3l4Mnh5ZjM=/template_primary" src="https://res.cloudinary.com/dw4cidvdw/video/upload/v1692470417/tfllgxev3rqswyx2xyf3.mp4"></video>-->
-
-
+      <AdvancedVideo class="d-none d-md-block p-0" :cldVid="myVdo" autoplay muted loop/>
+      <AdvancedVideo class="d-md-none p-0" :cldVid="myVdoMobile" autoplay muted loop/>
     </div>
     <div class="infography" style="">
       <div style="align-self: center">
@@ -65,25 +61,42 @@
 
 <script>
 // @ is an alias to /src
-
 import categorySlider from '@/components/CategorySlider'
 import recipeCard from '@/components/RecipeCard2'
 import {onMounted, ref} from "vue";
 import app from "@/App";
 import LogoSlider from "@/components/LogoSlider";
-import {Cloudinary} from "@cloudinary/url-gen";
+
+
+import { AdvancedVideo } from '@cloudinary/vue';
+import { Cloudinary } from "@cloudinary/url-gen";
+
+// Import required actions and qualifiers.
+import { fill } from "@cloudinary/url-gen/actions/resize";
+import { byRadius } from "@cloudinary/url-gen/actions/roundCorners";
+import { FocusOn } from "@cloudinary/url-gen/qualifiers/focusOn";
+import { Gravity } from "@cloudinary/url-gen/qualifiers";
+import { AutoFocus } from "@cloudinary/url-gen/qualifiers/autoFocus";
 
 
 export default {
   name: 'Home',
-  components: {Cloudinary,
+  components: {Cloudinary, AdvancedVideo,
     LogoSlider,
     categorySlider, recipeCard, app
   },
   setup(){
-    const cld = new Cloudinary({cloud: {cloudName: 'dw4cidvdw'}});
+    // Instantiate a CloudinaryImage object for the image with the public ID, 'docs/models'.
 
-
+// Resize to 250 x 250 pixels using the 'fill' crop mode.
+//     myVdo.resize(fill().width(100).height(250));
+    const cld = new Cloudinary({
+      cloud: {
+        cloudName: "dw4cidvdw",
+      },
+    });
+    const myVdo = cld.video("pp1vuwaeiufxnn1ozets");
+    const myVdoMobile = cld.video("tfllgxev3rqswyx2xyf3");
 
     const foodSlides = ref()
     const getFoodSlides = ()=>{
@@ -98,9 +111,7 @@ export default {
       getFoodSlides();
     })
     return{
-
-      cld,
-      foodSlides
+      foodSlides, cld, myVdo, myVdoMobile
     }
   }
 

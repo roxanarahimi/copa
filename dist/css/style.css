@@ -178,14 +178,15 @@ a, a:hover {
 
 .parallax1-video {
     width: 100%;
-    margin-top: -80px;
+    /*margin-top: -80px;*/
     height: auto !important;
 }
 
 .parallax1-video-mobile {
     /*position: absolute;*/
-    margin-top: -80px;
+    /*margin-top: -80px;*/
     width: 100%;
+    height: auto !important;
 }
 
 .parallax2 {
