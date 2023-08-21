@@ -4,7 +4,8 @@
   <div class="container-fluid m-0 p-0" style="overflow-x: hidden; min-height: 100vh">
     <router-view/>
   </div>
-  <the-footer />
+
+    <the-footer />
 </template>
 <script>
 import TheNavbar from "@/components/TheNavbar";

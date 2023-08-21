@@ -2,6 +2,7 @@ body, html {
     font-family: Vazir !important;
     direction: rtl !important;
     text-align: right !important;
+    scroll-behavior: smooth;
 }
 
 * {

@@ -69,7 +69,7 @@
           <li @click="sideMenuToggle"><router-link class=" side-menu-navlink" to="/products"><img src="/img/cookie.png" class="m-2" alt="">محصولات</router-link></li>
           <li @click="sideMenuToggle"><router-link class=" side-menu-navlink" to="/recipes"><img src="/img/cake.png" class="m-2" alt="">دستور پخت</router-link></li>
 <!--          <li @click="sideMenuToggle"><router-link class=" side-menu-navlink" to="/about"><img src="/img/people.png" class="m-2" alt="">درباره ما</router-link></li>-->
-          <li @click="sideMenuToggle"><router-link class=" side-menu-navlink" to="/trasers"><img src="/img/people.png" class="m-2" alt="">تیزر ها</router-link></li>
+          <li @click="sideMenuToggle"><router-link class=" side-menu-navlink" to="/teasers"><img src="/img/people.png" class="m-2" alt="">تیزر ها</router-link></li>
         </ul>
 
         <div class="side-menu-footer">
