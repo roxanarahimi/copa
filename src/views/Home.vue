@@ -117,6 +117,7 @@ export default {
 
 
       document.addEventListener('keyup', (e)=>{ scrollDown(e);})
+      document.addEventListener('touchend', (e)=>{ scrollDown(e);})
 
     })
     return {
