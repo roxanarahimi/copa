@@ -8,6 +8,14 @@ body, html {
 * {
     transition: all 0.5s ease !important;
 }
+/*.sectionsWrapper{*/
+/*    overflow-y: scroll !important;*/
+/*    scroll-snap-type: y mandatory !important;*/
+/*}*/
+/*.section{*/
+/*    display: flex;*/
+/*    scroll-snap-align: start !important;*/
+/*}*/
 
 body {
 
@@ -191,7 +199,7 @@ a, a:hover {
 }
 
 .parallax2 {
-    background: url("/img/choco.jpg");
+    background: url("/img/choco.jpg") center center no-repeat;
     background-size: cover;
     height: 100vh;
     color: white;
@@ -550,6 +558,14 @@ main {
 }
 
 @media (max-width: 700px) {
+    .parallax2 {
+        background: url("/img/choco-mobile.jpg") center center no-repeat;
+        background-size: cover;
+        height: 100vh;
+        color: white;
+        padding: 20px;
+
+    }
     .parallax6 {
         height: 50vh;
     }
@@ -564,7 +580,8 @@ main {
     .infography{
         background: url('/img/s3.jpg') center center no-repeat;
         background-size: cover;
-        height: calc( 100vh - 60px);
+        height: calc( 100vh - 56px);
+
     }
     .infography-h1{
         font-size: 40px;

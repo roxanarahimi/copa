@@ -6,8 +6,9 @@
           <h5 class="title2">راه های ارتباطی کوپا</h5>
 
           <ul class="text-start mt-5 p-0">
-            <li>
-              <svg class="m-2" width="26" height="34" viewBox="0 0 26 34" fill="none"
+            <li>  
+             <a target="_blank"  href="https://www.google.com/maps/place/AmadehLaziz/@35.7302329,51.3807302,19z/data=!4m6!3m5!1s0x3f8e07d020c7ca45:0x43bf4c9a730015f3!8m2!3d35.7301399!4d51.3807224!16s%2Fg%2F11c1r04p2q">
+            <svg class="m-2" width="26" height="34" viewBox="0 0 26 34" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M25 13.4417C25 20.3131 13 32.1043 13 32.1043C13 32.1043 1 20.3131 1 13.4417C1 6.57034 6.37258 1 13 1C19.6275 1 25 6.57034 25 13.4417Z"
@@ -17,8 +18,10 @@
                     fill="black" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               ایران، تهران، گیشا، خیابان بلوچستان، پلاک ۵۸
+              </a>
             </li>
             <li>
+              <a href="tel:+982141638000">
               <svg class="m-2" width="28" height="30" viewBox="0 0 28 30" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -26,26 +29,32 @@
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               دفتر مرکزی: <span dir="ltr"> (+9821) 41 638 000</span>
+              </a>
             </li>
             <li>
-              <svg class="m-2" width="28" height="30" viewBox="0 0 28 30" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
+              <a href="tel:+982188976091">
+              <svg class="m-2" width="28" height="30" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M6.09627 19.1487L11.5029 20.235C15.1549 18.3345 17.4108 16.1514 18.7237 12.7484L17.7128 7.12656L19.6236 1.85889H24.5481C26.0284 1.85889 27.1941 3.12722 26.973 4.64481C26.4211 8.43344 24.7937 15.3027 20.0365 20.235C15.0408 25.4146 7.84567 27.6622 3.88567 28.5555C2.35645 28.9006 0.999999 27.6637 0.999999 26.0411V21.1622L6.09627 19.1487Z"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               دفتر پخش: <span dir="ltr"> (+9821) 88976091-4</span>
+              </a>
             </li>
             <li>
-              <svg class="m-2" width="32" height="25" viewBox="0 0 32 25" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path d="M8.5 7.83447L16 13.2777L23.5 7.83447" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round"/>
-                <path
-                    d="M1 20.2761V4.72395C1 3.00611 2.34314 1.61353 4 1.61353H28C29.6569 1.61353 31 3.00611 31 4.72395V20.2761C31 21.994 29.6569 23.3865 28 23.3865H4C2.34314 23.3865 1 21.994 1 20.2761Z"
-                    stroke="currentColor" stroke-width="2"/>
-              </svg>
-              info@amadehlaziz.com
+              <span @click="copyTxt('info@amadehlaziz.com', 'copyAlert1')">
+                <svg class="m-2" width="32" height="25" viewBox="0 0 32 25" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.5 7.83447L16 13.2777L23.5 7.83447" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+                  <path
+                      d="M1 20.2761V4.72395C1 3.00611 2.34314 1.61353 4 1.61353H28C29.6569 1.61353 31 3.00611 31 4.72395V20.2761C31 21.994 29.6569 23.3865 28 23.3865H4C2.34314 23.3865 1 21.994 1 20.2761Z"
+                      stroke="currentColor" stroke-width="2"/>
+                </svg>
+                info@amadehlaziz.com
+                <span id="copyAlert1">کپی شد!</span>
+              </span>
+
             </li>
           </ul>
         </div>
@@ -106,29 +115,32 @@
         </div>
         <div class="col-lg-4 col-xl-3 mb-4 px-xl-4">
           <h5 class="title2">انتقادات و پیشنهادات</h5>
-
-          <form class="contact-form mt-5" action="">
+          <div class="mt-3" >
+            <div class="success-msg  d-none alert alert-success">با تشکر، پیام شما با موفقیت ارسال شد.</div>
+            <div class="err-msg  d-none alert alert-danger">لطفا همه مقادیر را پر کنید.</div>
+          </div>
+          <div class="contact-form mt-5">
             <div class="mb-3">
               <input placeholder="نام:" type="text" class="form-control form-control-sm" id="name"
-                     aria-describedby="nameHelp">
+                   required  aria-describedby="nameHelp">
               <div id="nameHelp" class="form-text"></div>
             </div>
             <div class="mb-3">
               <input placeholder=":ایمیل" type="email" dir="ltr" class="form-control form-control-sm text-start"
-                     id="email" aria-describedby="emailHelp">
+                   required  id="email" aria-describedby="emailHelp">
               <div id="emailHelp" class="form-text"></div>
             </div>
             <div class="message-wrapper border">
               <div class="mb-3">
                 <textarea placeholder="پیام شما:" class="form-control form-control-sm" rows="5" id="message"
-                          aria-describedby="messageHelp"></textarea>
+                     required     aria-describedby="messageHelp"></textarea>
                 <div id="messageHelp" class="form-text"></div>
               </div>
-              <button type="submit" class="btn btn-sm btn-outline-danger">ارسال</button>
+              <button type="submit" @click="submit" class="btn btn-sm btn-outline-danger">ارسال</button>
 
             </div>
 
-          </form>
+          </div>
         </div>
         <div class="col-lg-4 mb-4 d-md-none d-lg-block px-3 px-md-0 px-lg-5">
           <h5 class="title2">شبکه های اجتماعی کوپا</h5>
@@ -194,11 +206,72 @@
 
 <script>
 export default {
-  name: "TheFooter"
+  name: "TheFooter",
+  setup(){
+
+    const copyTxt = (txt,id)=>{
+      navigator.clipboard.writeText(txt).then(() => {
+        document.getElementById(id).style.opacity= "1";
+        setTimeout(() => {
+          document.getElementById(id).style.opacity= "0";
+        },2000)
+      });
+    };
+    const submit = ()=>{
+      let name = document.getElementById('name')
+      let email = document.getElementById('email')
+      let message = document.getElementById('message')
+      let messageW = document.querySelector('.message-wrapper')
+      document.querySelector('.success-msg').classList.add('d-none')
+      document.querySelector('.err-msg').classList.add('d-none')
+      name.classList.remove('error')
+      email.classList.remove('error')
+      messageW.classList.remove('error')
+      let empty = 0;
+      if (name.value == ''){
+        empty++;
+        name.classList.add('error');
+        document.querySelector('.err-msg').classList.remove('d-none')
+      }if (email.value == ''){
+
+        empty++;
+        email.classList.add('error');
+        document.querySelector('.err-msg').classList.remove('d-none')
+      }if (message.value == ''){
+        empty++;
+        messageW.classList.add('error');
+        document.querySelector('.err-msg').classList.remove('d-none')
+      }
+      if (empty === 0){
+        document.querySelector('.success-msg').classList.remove('d-none')
+        name.value = '';
+        email.value = '';
+        message.value = '';
+      }
+    }
+
+    return{
+      copyTxt, submit
+    }
+  }
 }
 </script>
 
 <style scoped>
+.error{
+  border: #dc3545 solid 2px !important;
+}
+#copyAlert1, #copyAlert2,#copyAlert3{
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  direction: rtl;
+  padding:5px;
+  color: black;
+
+}
+
 .telegram {
   border-radius: 50%;
   transition: 1s ease;
@@ -230,6 +303,9 @@ export default {
 
 .facebook:hover svg path {
   stroke: #3b5998 !important;
+}
+li{
+  cursor: pointer;
 }
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <main class="container-fluid p-0 m-0">
+  <main class="container-fluid sectionsWrapper p-0 m-0">
     <section class="section parallax1 row p-0 m-0">
       <!--      <video class="d-none d-md-block parallax1-video p-0" autoplay muted loop preload="auto" >-->
       <!--        <source src="/vdo/hero.mp4" type="video/mp4">-->
@@ -92,36 +92,64 @@ export default {
           })
           .catch();
     }
-    const scrollDown= (e)=>{
-      if(e.key === 'ArrowDown'){
-        let section = null;
 
+    const onScroll = () => {
+
+
+      let sections = document.querySelectorAll('.section');
+      let section = null;
+
+      sections.forEach((element) => {
+        let top = element.getBoundingClientRect().top;
+        let height = window.innerHeight * -1;
+        if (top < 0 && top > height) {
+          section = element;
+          return false // "break"
+        }
+      });
+      if (section !== null && section.nextSibling !== null && section.nextSibling.nodeName !== '#text') {
+        // document.removeEventListener('scroll', onScroll)
+        // console.log('removeEventListener!');
+        section.nextSibling.scrollIntoView();
+      }
+    }
+
+    const onKeyUP = (e) => {
+      document.removeEventListener('scroll', onScroll)
+      e.preventDefault();
+      let sections = document.querySelectorAll('.section');
+      if (e.key === 'ArrowDown') {
+        let section = null;
         sections.forEach((element) => {
           let top = element.getBoundingClientRect().top;
-          let height =  window.innerHeight * -1;
+          let height = window.innerHeight * -1;
           if (top < 0 && top > height) {
             section = element;
             return false // "break"
           }
         });
-        if (section !== null && section.nextSibling !== null && section.nextSibling.nodeName !== '#text'){
+        if (section !== null && section.nextSibling !== null && section.nextSibling.nodeName !== '#text') {
           section.nextSibling.scrollIntoView();
         }
       }
+
+      sections.forEach((element)=>{
+        if(element.getBoundingClientRect().top == 0){
+         document.addEventListener('scroll', onScroll)
+          return false // "break"
+        }
+      })
     }
     onMounted(() => {
       getFoodSlides();
-
-
-      let sections = document.querySelectorAll('.section');
-
-
-      document.addEventListener('keyup', (e)=>{ scrollDown(e);})
-      document.addEventListener('touchend', (e)=>{ scrollDown(e);})
+      // document.addEventListener('scroll', onScroll)
+      // document.addEventListener('keyup', (e) => {
+      //   onKeyUP(e)
+      // })
 
     })
     return {
-      foodSlides, cld, myVdo, myVdoMobile,scrollDown
+      foodSlides, cld, myVdo, myVdoMobile, onScroll, onKeyUP
     }
   }
 
