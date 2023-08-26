@@ -399,44 +399,13 @@ main {
     }
 }
 
-.category-nav, .category-nav-mobile {
-    background-color: #FFE7D7;
-    border-radius: 14px;
-    padding: 2px 20px;
-    width: 700px;
-    min-height: 43px;
-    margin: 0 auto;
-    font-size: 16px;
-
-    line-height: 43px;
-}
-
-.category-nav span {
-    text-wrap: none;
-    cursor: pointer;
-}
-
-.category-nav-active {
-    border-radius: 10px;
-    font-weight: 600;
-    color: white;
-    background-color: #E3051B;
-    height: 33px;
-    padding: 4px 12px;
-    margin: 4px;
-    text-wrap: none;
-
-    line-height: 25px;
-}
 
 .product-card {
     border-radius: 20px;
     text-align: center;
     overflow: hidden;
     cursor: pointer;
-    max-width: 300px;
-    margin: auto;
-
+    /*max-width: 300px;*/
 }
 
 .product-card-img-bg {

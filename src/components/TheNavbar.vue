@@ -137,6 +137,25 @@ export default {
 
     });
 
+    // document.addEventListener('click', function(e) {
+    //   e = e || window.event;
+    //   var target = e.target || e.srcElement;
+    //   console.log(target)
+    //   if (!(
+    //           target.classList.contains('nav-category') ||
+    //           target.classList.contains('nav-category-select-btn') ||
+    //           target.classList.contains('form-control') ||
+    //           target.classList.contains('bi-chevron-down') ||
+    //           // target.classList.contains('all_li')||
+    //           target.classList.contains('category-nav-li')||
+    //           target.classList.contains('category-mobile-nav-options')
+    //       )
+    //       && document.querySelector('.category-nav-mobile-btn')
+    //       && document.querySelector('.category-nav-mobile-btn').getAttribute('data-flag') == 0) {
+    //     categoryNavToggle();
+    //   }
+    //
+    // });
 
   },
   methods:{

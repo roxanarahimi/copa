@@ -146,7 +146,7 @@
           <h5 class="title2">شبکه های اجتماعی کوپا</h5>
           <div class="h-100 d-grid">
             <div style="align-self: start" class="d-flex justify-content-between mt-5">
-              <a class="telegram cursor-pointer">
+              <a  class="telegram cursor-pointer">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                       d="M30.7999 12.8L7.3999 20.9L15.4999 23.6M30.7999 12.8L15.4999 23.6M30.7999 12.8L23.5999 31.7L15.4999 23.6"
@@ -158,7 +158,7 @@
                       stroke-linejoin="round"/>
                 </svg>
               </a>
-              <a class="instagram cursor-pointer">
+              <a href="https://www.instagram.com/copa_iran/" target="_blank" class="instagram cursor-pointer">
                 <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                       d="M18.9999 26.5554C23.1726 26.5554 26.5554 23.1726 26.5554 18.9999C26.5554 14.8271 23.1726 11.4443 18.9999 11.4443C14.8271 11.4443 11.4443 14.8271 11.4443 18.9999C11.4443 23.1726 14.8271 26.5554 18.9999 26.5554Z"
@@ -171,7 +171,7 @@
                         stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
-              <a class="facebook cursor-pointer">
+              <a href="https://www.facebook.com/copasweet" target="_blank" class="facebook cursor-pointer">
                 <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                       d="M36 11.4444V26.5556C36 31.7715 31.7715 36 26.5556 36H11.4444C6.22843 36 2 31.7715 2 26.5556V11.4444C2 6.22843 6.22843 2 11.4444 2H26.5556C31.7715 2 36 6.22843 36 11.4444Z"
@@ -184,7 +184,6 @@
                   <path d="M13.3333 20.8889H17.111H24.6666" stroke="currentColor" stroke-opacity="0.7" stroke-width="3"
                         stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-
               </a>
             </div>
             <div style="align-self: center" class="text-center">

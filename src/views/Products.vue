@@ -4,11 +4,17 @@
     <div class="parallax3">
     </div>
     <category-nav :categories="categories" :getData="getData" :getDataByCat="getDataByCat"/>
-    <div class="container-fluid p-0 m-0 row p-md-5 contents-area">
-      <div class="col-6 col-md-6 col-lg-4 col-xl-3 px-3" v-for="(item, index) in data" :key="index">
-        <product-card :product="item"/>
+    <div class="contents-area">
+      <div v-if="data.length" class="container-fluid p-0 m-0 row p-md-5">
+        <div class="col-6 col-md-6 col-lg-4 col-xl-3 " v-for="(item, index) in data" :key="index">
+          <product-card :product="item"/>
+        </div>
+      </div>
+      <div v-else class="text-center mb-5">
+        <p>محصولی موجود نمیباشد</p>
       </div>
     </div>
+
 
   </main>
 </template>
