@@ -1,8 +1,8 @@
 <template>
   <main class="container-fluid p-0 m-0">
-    <div class="parallax3 row p-0 m-0" style="background: url('/img/cornflex.jpg') center center no-repeat; background-size: cover;height: 100vh">
+    <router-link to="/recipes" class="parallax3 row p-0 m-0" style="background: url('/img/cornflex.jpg') center center no-repeat; background-size: cover;height: 100vh">
 
-    </div>
+    </router-link>
 
     <div class="p-5">
       <div class="p-4">
