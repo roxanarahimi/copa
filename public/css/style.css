@@ -13,7 +13,6 @@ body, html {
 /*    scroll-snap-type: y mandatory !important;*/
 /*}*/
 .section{
-    display: flex;
     scroll-snap-align: start !important;
 }
 
