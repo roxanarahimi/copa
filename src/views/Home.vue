@@ -1,26 +1,19 @@
 <template>
-  <main class="container-fluid sectionsWrapper p-0 m-0">
+  <main class="container-fluid sectionsWrapper p-0 m-0" style="overflow-x: hidden; width:100%; height: 100vh;overflow-y: scroll;scroll-snap-type: y mandatory">
     <main-hero />
     <section class="section infography" style="">
-      <div style="align-self: center">
-        <p class="infography-p1">
-          به دنیــایی پر از عشــــق و خوشـــمزگی به نام کوپا خــوش آمدیـد
-          <br>
-          با کوپا ما به یک داســتان هیـجان انگیـز شــما رو دعــوت می کنیم
-          <br>
-          در این دنیای جذاب و هیجان‌انگیـز هر قطره شیرینی به شما لبخند
-          <br>
-          می‌زند و هرلحظه از زندگیتان را به یک سفر شیرین تبدیل می‌کند
-          <br>
-          هــدف ما ایجــاد لحظـات شیــرین و لذت بخــش برای شما می باشد
+      <div style="align-self: center; text-align: center">
+        <p class="infography-p1  mx-auto">
+          به دنیایی پر از عشق و خوشمزگی به نام کوپا خوش آمدید
+          با کوپا ما به یک داستان هیجان‌انگیز شما رو دعوت می‌کنیم
+          در این دنیای جذاب و هیجان‌انگیز هر قطره شیرینی به شما لبخند می‌زند و هرلحظه از زندگیتان را به یک سفر شیرین تبدیل می‌کند
+          هدف ما ایجاد لحظات شیرین ولذت بخش برای شما می‌باشد
         </p>
-
       </div>
     </section>
     <section class="section parallax2">
       <div class="row h-100">
         <div class="col-lg-12 text-center d-grid">
-
           <div class="" style="align-self: center">
             <h1 class="parallax2-h1">
               با کوپا
@@ -28,7 +21,6 @@
               روزت را
               <br class="d-lg-none">
               بساز
-
             </h1>
             <button class="parallax2-btn "> توضیحات بیشتر</button>
           </div>
@@ -57,6 +49,10 @@
     <section class="section">
       <logo-slider/>
     </section>
+    <section class="section">
+      <the-footer class="xoxo" />
+    </section>
+
   </main>
 
 </template>
@@ -65,22 +61,23 @@
 // @ is an alias to /src
 import categorySlider from '@/components/CategorySlider'
 import recipeCard from '@/components/RecipeCard2'
-import {onMounted, ref} from "vue";
+import {onMounted, onUnmounted, ref} from "vue";
 import app from "@/App";
 import LogoSlider from "@/components/LogoSlider";
 
 
 import MainHero from "@/components/MainHero";
+import TheFooter from "@/components/TheFooter";
 
 export default {
   name: 'Home',
   components: {
+    TheFooter,
     MainHero,
     LogoSlider,
     categorySlider, recipeCard, app
   },
   setup() {
-
     const foodSlides = ref()
     const getFoodSlides = () => {
       axios.get(app.setup().apiUrl + '/api/food/slides')
@@ -90,8 +87,9 @@ export default {
           .catch();
     }
 
-    const onScroll = () => {
-      window.removeEventListener('scroll', onScroll)
+    const onScroll = (e) => {
+      // e.preventDefault();
+      document.removeEventListener('scroll', onScroll)
       let sections = document.querySelectorAll('.section');
       let section = null;
 
@@ -104,11 +102,8 @@ export default {
         }
       });
       if (section !== null && section.nextSibling !== null && section.nextSibling.nodeName !== '#text') {
-        // document.removeEventListener('scroll', onScroll)
-        // console.log('removeEventListener!');
         section.nextSibling.scrollIntoView();
       }
-
       setInterval(function () {
         sections.forEach((element)=>{
           if(element.getBoundingClientRect().top == 0){
@@ -123,7 +118,7 @@ export default {
         e.preventDefault();
         let sections = document.querySelectorAll('.section');
 
-        window.removeEventListener('scroll', onScroll)
+        document.removeEventListener('scroll', onScroll)
         setInterval(function () {
           sections.forEach((element)=>{
             if(element.getBoundingClientRect().top == 0){
@@ -150,12 +145,25 @@ export default {
 
     onMounted(() => {
       getFoodSlides();
-      window.addEventListener('scroll', onScroll)
-      window.addEventListener('keyup', (e) => {
-        onKeyUP(e)
-      })
+      // document.addEventListener('scroll', onScroll)
+      // document.addEventListener('keyup', (e) => {
+      //   onKeyUP(e)
+      // });
 
-    })
+      let footer =   document.querySelectorAll('footer');
+      footer.forEach((el)=>{
+        if(!el.classList.contains('xoxo')) {
+          el.classList.add('d-none');
+        }
+      })
+    });
+    onUnmounted(()=>{
+
+      let footer =   document.querySelectorAll('footer');
+      footer.forEach((el)=>{
+        el.classList.remove('d-none');
+      })
+    });
     return {
       foodSlides, onScroll, onKeyUP
     }

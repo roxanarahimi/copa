@@ -1,5 +1,4 @@
 <template>
-  <section class="section">
     <footer class="container-fluid m-0 p-0">
       <div class="container-fluid p-0 m-0 row p-5 text-center justify-content-between">
         <div class=" col-md-6 col-lg-4 mb-4 ">
@@ -200,7 +199,6 @@
         </div>
       </div>
     </footer>
-  </section>
 </template>
 
 <script>

@@ -12,10 +12,10 @@ body, html {
 /*    overflow-y: scroll !important;*/
 /*    scroll-snap-type: y mandatory !important;*/
 /*}*/
-/*.section{*/
-/*    display: flex;*/
-/*    scroll-snap-align: start !important;*/
-/*}*/
+.section{
+    display: flex;
+    scroll-snap-align: start !important;
+}
 
 body {
 
@@ -518,6 +518,8 @@ main {
 }
 .infography-p1{
     font-size: 40px;
+    text-align: justify;
+    max-width: 800px;
 }
 
 
@@ -547,18 +549,11 @@ main {
         height: calc( 100vh - 56px);
 
     }
-    .infography-h1{
-        font-size: 40px;
-        font-weight: 800;
-    }
+
     .infography-p1{
-        font-size: 21px;
-    }
-    .infography-p2{
-        font-size: 22px;
-    }
-    .infography-p3{
-        font-size: 23px;
+        font-size: 25px;
+        max-width: 350px;
+
     }
 }
 .contents-area{
