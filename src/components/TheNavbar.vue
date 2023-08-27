@@ -61,10 +61,10 @@
       </div>
 
 
-
     </div>
 
-    <div class="d-md-none vh-100 side-menu side-menu-start" style="position: fixed; top:0; right: -300px; height: 100vh">
+    <div class="d-md-none vh-100 side-menu side-menu-start"
+         style="position: fixed; top:0; right: -300px; height: 100vh">
       <div class="py-0 px-3">
         <button class="btn border-0 " @click="sideMenuToggle" style="font-size: 30px !important">
           <i class="bi bi-list i-list text-light"></i>
@@ -106,7 +106,8 @@
       </div>
     </div>
 
-    <div class="side-menu-back d-none" style="z-index: 100; position: absolute; top: 0; right: 0; height: 100vh; width: 100vw !important; background-color: rgba(0,0,0,0.49)"></div>
+    <div class="side-menu-back d-none"
+         style="z-index: 100; position: absolute; top: 0; right: 0; height: 100vh; width: 100vw !important; background-color: rgba(0,0,0,0.49)"></div>
   </header>
   <div class="p-2 w-100 search-area"
        style="position: fixed; left:0; top:55px;transition:all 1s ease; z-index:2000; opacity: 0">
@@ -119,49 +120,29 @@ export default {
   name: "TheNavbar",
   mounted() {
 
-    document.addEventListener('scroll', () => {
+
+    window.addEventListener('scroll', () => {
 
       if (window.scrollY > 100) {
-        document.querySelector('#nav').classList.remove('navbar-dark');
-        document.querySelector('#nav').classList.add('navbar-light');
-        document.querySelector('#nav').classList.add('bg-light');
-        document.querySelectorAll('.nav-logo').forEach((element) => {
-          element.classList.remove('d-none');
-        });
-        document.querySelectorAll('.nav-link').forEach((element) => {
-          element.classList.remove('nav-link-white')
-        })
-
-        document.querySelector('#nav-mobile').classList.add('bg-light');
-        document.querySelector('.i-list').classList.remove('text-light');
-
-        document.querySelectorAll('.li-cover').forEach((element) => {
-          element.classList.add('d-none');
-        })
-
+        this.showMenu2();
       } else {
-        document.querySelector('#nav').classList.add('navbar-dark');
-        document.querySelector('#nav').classList.remove('navbar-light');
-        document.querySelector('#nav').classList.remove('bg-light');
-        document.querySelectorAll('.nav-logo').forEach((element) => {
-          element.classList.add('d-none');
-        })
-        document.querySelectorAll('.nav-link').forEach((element) => {
-          element.classList.add('nav-link-white')
-        })
-
-        document.querySelector('#nav-mobile').classList.remove('bg-light');
-        document.querySelector('.i-list').classList.add('text-light');
-        document.querySelectorAll('.li-cover').forEach((element) => {
-          element.classList.remove('d-none');
-        })
+        this.showMenu1();
       }
 
     });
+    setTimeout(() => {
+      document.querySelector('.sectionsWrapper')?.addEventListener('scroll', () => {
+        if (document.querySelector('.sectionsWrapper').scrollTop > 100) {
+          this.showMenu2();
+        } else {
+          this.showMenu1();
+        }
+      });
+    }, 1000)
 
     document.querySelector('.side-menu-back').addEventListener('click', function (e) {
 
-      if (document.querySelector('.nav-mobile-btn').getAttribute('data-flag') == 1){
+      if (document.querySelector('.nav-mobile-btn').getAttribute('data-flag') == 1) {
         document.querySelector('.side-menu-back').classList.add('d-none');
         document.querySelector('.side-menu').style.right = '-300px';
         document.querySelector('.nav-mobile-btn').setAttribute('data-flag', 0);
@@ -169,8 +150,47 @@ export default {
 
     });
 
+
   },
   methods: {
+
+    showMenu1() {
+      document.querySelector('#nav').classList.add('navbar-dark');
+      document.querySelector('#nav').classList.remove('navbar-light');
+      document.querySelector('#nav').classList.remove('bg-light');
+      document.querySelectorAll('.nav-logo').forEach((element) => {
+        element.classList.add('d-none');
+      })
+      document.querySelectorAll('.nav-link').forEach((element) => {
+        element.classList.add('nav-link-white')
+      })
+
+      document.querySelector('#nav-mobile').classList.remove('bg-light');
+      document.querySelector('.i-list').classList.add('text-light');
+      document.querySelectorAll('.li-cover').forEach((element) => {
+        element.classList.remove('d-none');
+      })
+
+    },
+    showMenu2() {
+      document.querySelector('#nav').classList.remove('navbar-dark');
+      document.querySelector('#nav').classList.add('navbar-light');
+      document.querySelector('#nav').classList.add('bg-light');
+      document.querySelectorAll('.nav-logo').forEach((element) => {
+        element.classList.remove('d-none');
+      });
+      document.querySelectorAll('.nav-link').forEach((element) => {
+        element.classList.remove('nav-link-white')
+      })
+
+      document.querySelector('#nav-mobile').classList.add('bg-light');
+      document.querySelector('.i-list').classList.remove('text-light');
+
+      document.querySelectorAll('.li-cover').forEach((element) => {
+        element.classList.add('d-none');
+      })
+
+    },
     sideMenuToggle() {
       let flag = document.querySelector('.nav-mobile-btn').getAttribute('data-flag');
       if (flag == 0) {

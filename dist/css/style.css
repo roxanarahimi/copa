@@ -3,17 +3,59 @@ body, html {
     direction: rtl !important;
     text-align: right !important;
     scroll-behavior: smooth;
+    background-color: transparent;
 }
 
 * {
     transition: all 0.5s ease !important;
 }
+
 /*.sectionsWrapper{*/
 /*    overflow-y: scroll !important;*/
 /*    scroll-snap-type: y mandatory !important;*/
 /*}*/
-.section{
+
+::-webkit-scrollbar {
+    width: 5px;
+    cursor: pointer !important;
+    background-color: gray !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    /*box-shadow: inset 0 0 5px grery;*/
+    /*border-radius: 10px;*/
+    cursor: pointer !important;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: dimgray;
+    border-radius: 5px;
+    cursor: pointer !important;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: darkgray;
+    cursor: pointer !important;
+
+}
+
+.sectionsWrapper {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    direction: ltr !important
+}
+
+.section {
     scroll-snap-align: start !important;
+    direction: rtl !important;
 }
 
 body {
@@ -129,6 +171,7 @@ a, a:hover {
     padding-left: 10px;
     color: white;
 }
+
 .title3 {
 
     display: inline-block;
@@ -511,11 +554,13 @@ main {
     display: grid;
     color: #fec700;
 }
-.infography-h1{
+
+.infography-h1 {
     font-size: 80px;
     font-weight: 800;
 }
-.infography-p1{
+
+.infography-p1 {
     font-size: 40px;
     text-align: justify;
     max-width: 800px;
@@ -531,6 +576,7 @@ main {
         padding: 20px;
 
     }
+
     .parallax6 {
         height: 50vh;
     }
@@ -539,22 +585,24 @@ main {
         width: 50%;
     }
 
-    .parallax3{
+    .parallax3 {
         background: url('/img/probg2.jpg') center center no-repeat;
     }
-    .infography{
+
+    .infography {
         background: url('/img/s3.jpg') center center no-repeat;
         background-size: cover;
-        height: calc( 100vh - 56px);
+        height: calc(100vh - 56px);
 
     }
 
-    .infography-p1{
+    .infography-p1 {
         font-size: 25px;
         max-width: 350px;
 
     }
 }
-.contents-area{
+
+.contents-area {
     min-height: 100vh;
 }

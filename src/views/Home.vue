@@ -1,5 +1,5 @@
 <template>
-  <main class="container-fluid sectionsWrapper p-0 m-0" style="overflow-x: hidden; width:100%; height: 100vh;overflow-y: scroll;scroll-snap-type: y mandatory">
+  <main class="container-fluid sectionsWrapper p-0 m-0" >
     <main-hero />
     <section class="section infography" style="">
       <div style="align-self: center; text-align: center">
@@ -145,10 +145,6 @@ export default {
 
     onMounted(() => {
       getFoodSlides();
-      // document.addEventListener('scroll', onScroll)
-      // document.addEventListener('keyup', (e) => {
-      //   onKeyUP(e)
-      // });
 
       let footer =   document.querySelectorAll('footer');
       footer.forEach((el)=>{
