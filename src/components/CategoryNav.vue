@@ -2,25 +2,31 @@
   <div class="d-flex justify-content-center">
     <!--        style="box-shadow: 1px 2px lightgrey"-->
     <div class="d-none d-lg-block d-lg-flex justify-content-lg-between  category-nav-mobile m-5">
-      <span data-id="all" @click="getData" class="category-nav-span d-inline-block mx-3 text-center category-nav-active">همه محصولات</span>
-      <span :data-id="item.id" v-for="(item, index) in categories" :key="index" @click="getDataByCat(item.id)" class="category-nav-span d-inline-block mx-3 text-center">{{ item.title }}</span>
+      <span data-id="all" @click="getData"
+            class="category-nav-span d-inline-block mx-3 text-center category-nav-active">همه محصولات</span>
+      <span :data-id="item.id" v-for="(item, index) in categories" :key="index" @click="getDataByCat(item.id)"
+            class="category-nav-span d-inline-block mx-3 text-center">{{ item.title }}</span>
     </div>
-    <div class="d-lg-none category-nav my-5 mx-3"  style="position:relative;">
+    <div class="d-lg-none category-nav my-5 mx-3" style="position:relative;">
       <div class="row p-0">
-        <div data-flag="1" @click="categoryNavToggle" class="col-6 category-nav-select-btn cursor-pointer category-nav-mobile-btn d-flex justify-content-between border-end"  style="padding: 0 25px">
-          <div   @click="categoryNavToggle" class="all_li">همه</div>
-          <i class="bi bi-chevron-down ps-5"></i>
+        <div @click="categoryNavToggle" data-flag="1"
+             class="col-6 category-nav-select-btn  justify-content-between cursor-pointer category-nav-mobile-btn d-flex justify-content-between border-end"
+             style="padding: 0 25px">
+          <div class="all_li d-block pe-5" style="width: calc(100% - 20px)">همه</div>
+          <i class="bi bi-chevron-down d-block" style="width: 20px"></i>
         </div>
         <div class="col-6 search-area">
-          <input class="border-0" placeholder="جستجوی محصول" type="text" style="height: 35px; background-color: transparent">
+          <input class="border-0" placeholder="جستجوی محصول" type="text"
+                 style="height: 35px; background-color: transparent">
         </div>
-        <div class="category-nav-mobile-options d-none w-50"
-                             style="position: absolute; top:50px;  right:0; background-color: whitesmoke; width: 100%; border-radius: 5px; z-index: 200">
-        <ul class="px-3 ">
-          <li data-id="all" @click="getData" class="category-nav-li">همه</li>
-          <li :data-id="item.id" @click="getDataByCat(item.id)" v-for="(item, index) in categories" :key="index" class="category-nav-li">{{ item.title }}</li>
-        </ul>
-      </div>
+        <div class="category-nav-mobile-options d-none w-50">
+          <ul class="px-3 ">
+            <li data-id="all" @click="getData" class="category-nav-li">همه</li>
+            <li :data-id="item.id" @click="getDataByCat(item.id)" v-for="(item, index) in categories" :key="index"
+                class="category-nav-li">{{ item.title }}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -38,6 +44,17 @@ export default {
   ],
   setup(_props) {
     const categoryNavToggle = () => {
+      if (document.querySelector('.category-nav').getBoundingClientRect().top > window.innerHeight * 60 / 100) {
+
+        document.querySelector('.category-nav-mobile-options').removeAttribute('style');
+        document.querySelector('.category-nav-mobile-options').setAttribute('style','bottom:50px');
+      } else {
+        document.querySelector('.category-nav-mobile-options').removeAttribute('style');
+        document.querySelector('.category-nav-mobile-options').setAttribute('style','top:50px');
+
+      }
+
+
       let flag = document.querySelector('.category-nav-mobile-btn').getAttribute('data-flag');
       if (flag == 0) {
         document.querySelector('.category-nav-mobile-options').classList.add('d-none');
@@ -57,23 +74,25 @@ export default {
       categoryNavToggle();
 
     }
-    onMounted(()=>{
-      document.addEventListener('click', function(e) {
+    onMounted(() => {
+
+
+      document.addEventListener('click', function (e) {
         e = e || window.event;
         var target = e.target || e.srcElement;
         if (!(
-            target.classList.contains('nav-category') ||
-            target.classList.contains('nav-category-select-btn') ||
-            target.classList.contains('form-control') ||
-            target.classList.contains('bi-chevron-down') ||
-            // target.classList.contains('all_li')||
-            target.classList.contains('category-nav-li')||
-            target.classList.contains('category-mobile-nav-options')
+                target.classList.contains('nav-category') ||
+                target.classList.contains('nav-category-select-btn') ||
+                target.classList.contains('form-control') ||
+                target.classList.contains('bi-chevron-down') ||
+                target.classList.contains('all_li') ||
+                target.classList.contains('category-nav-li') ||
+                target.classList.contains('category-mobile-nav-options')
             )
             && document.querySelector('.category-nav-mobile-btn')
             && document.querySelector('.category-nav-mobile-btn').getAttribute('data-flag') == 0) {
-            categoryNavToggle();
-          }
+          categoryNavToggle();
+        }
 
       });
 
@@ -87,13 +106,23 @@ export default {
 </script>
 
 <style scoped>
-.category-nav-span{
+.category-nav-mobile-options {
+  position: absolute;
+  right: 0;
+  background-color: whitesmoke;
+  width: 100%;
+  border-radius: 5px;
+  z-index: 200;
+}
+
+.category-nav-span {
   cursor: pointer;
 }
 
-.category-nav-li{
+.category-nav-li {
   cursor: pointer;
 }
+
 .category-nav,
 .category-nav-mobile {
   /*background-color: #FFE7D7;*/
