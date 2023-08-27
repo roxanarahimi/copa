@@ -1,22 +1,20 @@
 <template>
   <main class="container-fluid sectionsWrapper p-0 m-0">
-    <section class="section parallax1 row p-0 m-0">
-      <!--      <video class="d-none d-md-block parallax1-video p-0" autoplay muted loop preload="auto" >-->
-      <!--        <source src="/vdo/hero.mp4" type="video/mp4">-->
-      <!--      </video>-->
-      <!--      <video class=" d-md-none parallax1-video-mobile p-0" autoplay muted loop preload="auto">-->
-      <!--        <source src="/vdo/hero-mobile.mp4" type="video/mp4">-->
-      <!--      </video>-->
-
-      <AdvancedVideo class="d-none d-md-block p-0" :cldVid="myVdo" autoplay muted loop/>
-      <AdvancedVideo class="d-md-none p-0" :cldVid="myVdoMobile" autoplay muted loop/>
-    </section>
+    <main-hero />
     <section class="section infography" style="">
       <div style="align-self: center">
-        <p class="infography-p1">فقـط خــواسـتیم بدونیـــد متعهـدیم</p>
-        <h1 class="infography-h1">از بهترین مواد اولیه</h1>
-        <p class="infography-p2">تو مــحصولات مــورد علاقــه شــما برای</p>
-        <p class="infography-p3">هـــرســلیقه اســتفــاده می کـــنـــیم</p>
+        <p class="infography-p1">
+          به دنیــایی پر از عشــــق و خوشـــمزگی به نام کوپا خــوش آمدیـد
+          <br>
+          با کوپا ما به یک داســتان هیـجان انگیـز شــما رو دعــوت می کنیم
+          <br>
+          در این دنیای جذاب و هیجان‌انگیـز هر قطره شیرینی به شما لبخند
+          <br>
+          می‌زند و هرلحظه از زندگیتان را به یک سفر شیرین تبدیل می‌کند
+          <br>
+          هــدف ما ایجــاد لحظـات شیــرین و لذت بخــش برای شما می باشد
+        </p>
+
       </div>
     </section>
     <section class="section parallax2">
@@ -24,7 +22,14 @@
         <div class="col-lg-12 text-center d-grid">
 
           <div class="" style="align-self: center">
-            <h1 class="parallax2-h1">با کوپا روزت را بساز</h1>
+            <h1 class="parallax2-h1">
+              با کوپا
+              <br class="d-lg-none">
+              روزت را
+              <br class="d-lg-none">
+              بساز
+
+            </h1>
             <button class="parallax2-btn "> توضیحات بیشتر</button>
           </div>
         </div>
@@ -65,24 +70,16 @@ import app from "@/App";
 import LogoSlider from "@/components/LogoSlider";
 
 
-import {AdvancedVideo} from '@cloudinary/vue';
-import {Cloudinary} from "@cloudinary/url-gen";
+import MainHero from "@/components/MainHero";
 
 export default {
   name: 'Home',
   components: {
-    Cloudinary, AdvancedVideo,
+    MainHero,
     LogoSlider,
     categorySlider, recipeCard, app
   },
   setup() {
-    const cld = new Cloudinary({
-      cloud: {
-        cloudName: "dw4cidvdw",
-      },
-    });
-    const myVdo = cld.video("pp1vuwaeiufxnn1ozets");
-    const myVdoMobile = cld.video("mobile_400.800_peehvh");
 
     const foodSlides = ref()
     const getFoodSlides = () => {
@@ -94,8 +91,7 @@ export default {
     }
 
     const onScroll = () => {
-
-
+      window.removeEventListener('scroll', onScroll)
       let sections = document.querySelectorAll('.section');
       let section = null;
 
@@ -112,13 +108,31 @@ export default {
         // console.log('removeEventListener!');
         section.nextSibling.scrollIntoView();
       }
-    }
 
+      setInterval(function () {
+        sections.forEach((element)=>{
+          if(element.getBoundingClientRect().top == 0){
+            document.addEventListener('scroll', onScroll);
+            return false // "break"
+          }
+        })
+      }, 500);
+    }
     const onKeyUP = (e) => {
-      document.removeEventListener('scroll', onScroll)
-      e.preventDefault();
-      let sections = document.querySelectorAll('.section');
       if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        let sections = document.querySelectorAll('.section');
+
+        window.removeEventListener('scroll', onScroll)
+        setInterval(function () {
+          sections.forEach((element)=>{
+            if(element.getBoundingClientRect().top == 0){
+              document.addEventListener('scroll', onScroll);
+              return false // "break"
+            }
+          })
+        }, 200);
+
         let section = null;
         sections.forEach((element) => {
           let top = element.getBoundingClientRect().top;
@@ -132,24 +146,18 @@ export default {
           section.nextSibling.scrollIntoView();
         }
       }
-
-      sections.forEach((element)=>{
-        if(element.getBoundingClientRect().top == 0){
-         document.addEventListener('scroll', onScroll)
-          return false // "break"
-        }
-      })
     }
+
     onMounted(() => {
       getFoodSlides();
-      // document.addEventListener('scroll', onScroll)
-      // document.addEventListener('keyup', (e) => {
-      //   onKeyUP(e)
-      // })
+      window.addEventListener('scroll', onScroll)
+      window.addEventListener('keyup', (e) => {
+        onKeyUP(e)
+      })
 
     })
     return {
-      foodSlides, cld, myVdo, myVdoMobile, onScroll, onKeyUP
+      foodSlides, onScroll, onKeyUP
     }
   }
 
