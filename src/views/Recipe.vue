@@ -11,9 +11,25 @@
       </div>
     </div>
 
+<!--    <div style="height: auto">-->
+<!--      <div class="row justify-content-center">-->
+<!--        <div class="justify-content-between row p-5">-->
+<!--          -->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+
     <div class="p-5">
       <div class="p-4">
+        <div class=" container-fluid m-0 p-0 row justify-content-center ">
+          <div class="col-lg-3 pb-5">
+            <img class="img-fluid" style="margin-top: 0px" :src="url+data.image" alt="">
+          </div>
+        </div>
+
         <div class=" container-fluid m-0 p-0 row justify-content-center">
+
           <div class="col-xl-3">
             <h4 class="title mb-5 pe-5 ">مواد لازم</h4>
 
@@ -25,9 +41,10 @@
           </div>
           <div class="col-xl-4 d-flex justify-content-center justify-content-lg-end">
 
-            <product-card :product="data.product"/>
+          <product-card :product="data.product"/>
 
-          </div>
+        </div>
+
         </div>
 
       </div>
