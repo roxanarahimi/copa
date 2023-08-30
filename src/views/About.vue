@@ -35,7 +35,7 @@
               با توجه به اصول تولید محصولات کوپا، ارائه محصولات با کیفیت برای شما از الویت های ماست.با ما همراه شوید و طعم خوشمزگی را تجربه کنید.
             </p>
           </div>
-          <div class="col-md-5 d-grid"><img class="img-fluid mx-auto" src="/img/enjoy.png" alt=""></div>
+          <div class="col-md-5 d-grid"><img class="img-fluid mx-auto" src="/img/Enjoy.png" alt=""></div>
         </div>
       </div>
 
