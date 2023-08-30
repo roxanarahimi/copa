@@ -1,0 +1,622 @@
+body, html {
+    font-family: Vazir !important;
+    direction: rtl !important;
+    text-align: right !important;
+    scroll-behavior: smooth;
+    background-color: transparent;
+}
+
+* {
+    transition: all 0.5s ease !important;
+}
+
+/*.sectionsWrapper{*/
+/*    overflow-y: scroll !important;*/
+/*    scroll-snap-type: y mandatory !important;*/
+/*}*/
+
+::-webkit-scrollbar {
+    width: 5px;
+    cursor: pointer !important;
+    background-color: gray !important;
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+    /*box-shadow: inset 0 0 5px grery;*/
+    /*border-radius: 10px;*/
+    cursor: pointer !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: dimgray;
+    border-radius: 5px;
+    cursor: pointer !important;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: darkgray;
+    cursor: pointer !important;
+
+}
+@media(max-width: 700px) {
+    ::-webkit-scrollbar {
+        width: 0 !important;
+        background: transparent !important;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: transparent !important;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: transparent !important;
+    }
+}
+
+.sectionsWrapper {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    direction: ltr !important
+}
+
+.section {
+    scroll-snap-align: start !important;
+    direction: rtl !important;
+}
+
+body {
+
+    overflow-x: hidden;
+    /*max-width: 1600px !important;*/
+    margin: 0 auto;
+}
+
+#nav {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.nav-link {
+    display: block;
+    text-align: center !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    color: black !important;
+}
+
+@media (min-width: 1200px) {
+    .nav-link {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+
+
+}
+
+@media (max-width: 700px) {
+    .nav-link {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .parallax1 {
+        /*min-height: 500px !important;*/
+    }
+
+    .nav-link {
+        font-size: 12px !important;
+    }
+}
+
+.nav-link:hover, .router-link-exact-active {
+    color: #E3051B;
+}
+
+.side-menu {
+    background-image: linear-gradient(360deg, #E3051B 0%, #FF6B00 100%);
+    width: 300px !important;
+    z-index: 2000 !important;
+}
+
+.side-menu-ul {
+    padding-right: 15px;
+    /*margin-bottom: 50px !important;*/
+    align-self: start;
+}
+
+.side-menu-footer {
+    align-self: end;
+    margin-bottom: 50px;
+}
+
+.side-menu-ul li {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.side-menu-ul li img {
+    width: 34px;
+
+}
+
+.side-menu-ul li, .side-menu-ul li .router-link-exact-active {
+    color: white !important;
+    font-size: 16px;
+}
+
+
+a, a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.side-menu-hr {
+    border-color: white;
+    border-width: 2px;
+    border-right: 2px;
+    opacity: 1;
+    margin: 0;
+}
+
+.title {
+
+    display: inline-block;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(45deg, transparent, red) 1;
+    padding-bottom: 10px;
+}
+
+.title2 {
+
+    display: inline-block;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(45deg, transparent, white) 1;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    color: white;
+}
+
+.title3 {
+
+    display: inline-block;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(45deg, transparent, #1b6729) 1;
+    padding-bottom: 10px;
+}
+
+.parallax1 {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+
+}
+
+@media (min-width: 1200px) {
+    .parallax1 {
+        /*height: 100vh;*/
+
+    }
+
+    .parallax1-video {
+        margin-top: -100px;
+        height: auto;
+    }
+}
+
+@media (max-width: 1199px) {
+    .parallax1 {
+        /*min-height: 80vh;*/
+    }
+
+}
+
+@media (max-width: 1100px) {
+    .parallax1 {
+        /*min-height: 70vh;*/
+    }
+
+}
+
+@media (min-width: 768px) {
+    .parallax1 {
+        /*min-height: 50vh;*/
+    }
+
+}
+
+@media (min-width: 900px) {
+    .parallax1 {
+        /*min-height: 70vh;*/
+    }
+
+}
+
+.parallax1-video {
+    width: 100%;
+    /*margin-top: -80px;*/
+    height: auto !important;
+}
+
+.parallax1-video-mobile {
+    /*position: absolute;*/
+    /*margin-top: -80px;*/
+    width: 100%;
+    height: auto !important;
+}
+
+.parallax2 {
+    background: url("/img/choco.jpg") center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    padding: 30px 100px;
+
+}
+
+.parallax2-h1 {
+    font-size: 70px;
+    font-weight: 600;
+    font-family: BYekan !important;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.parallax2-btn {
+    color: white;
+    background-color: transparent;
+    border: 3px solid white;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.recipe-card {
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.recipe-card-img {
+    transition: all 200ms ease;
+}
+
+.recipe-card:hover .recipe-card-img {
+    transform: scale(1.2) rotate(10deg);
+
+}
+
+/*.recipe-card-title-back {*/
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100px;*/
+/*    background-color: rgba(255, 255, 255, 0.8);*/
+/*}*/
+
+.recipe-card-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #00a388;
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    font-weight: lighter;
+    color: white;
+}
+
+.recipe-card-play {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 80px;
+    left: 50px;
+    border-radius: 20px;
+    background-color: #006651;
+    transition: all 200ms ease;
+    text-align: center;
+    color: white;
+    font-size: 50px
+}
+
+.recipe-card:hover .recipe-card-play {
+    bottom: -80px;
+
+}
+
+footer {
+    min-height: 450px;
+    /*background-image: linear-gradient(#FFD4B7, #EC5361);*/
+    background: #111D56;
+    color: white;
+
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+ul {
+    list-style: none !important;
+}
+
+.contact-form input, .contact-form textarea, .message-wrapper {
+    border-radius: 12px;
+    background-color: white;
+}
+
+.message-wrapper {
+    border-radius: 12px;
+    background-color: white;
+    padding-bottom: 30px;
+}
+
+.message-wrapper .btn {
+    border-radius: 12px;
+    width: 90%;
+}
+
+textarea {
+    resize: none;
+    border: none !important;
+
+}
+
+input:focus, textarea:focus, .btn:focus, button:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.row {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+main {
+    min-height: 185px;
+
+}
+
+.parallax3 {
+    background: url('/img/probg.jpg') center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.parallax3-section {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.parallax3-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: all 1s;
+    display: grid;
+    text-align: center;
+}
+
+.parallax3-section:hover .parallax3-cover {
+    opacity: 1;
+}
+
+.parallax3-hover-title {
+    margin: 0 auto;
+    align-self: center;
+    text-align: center;
+    color: white;
+}
+
+@media (min-width: 1137px) {
+    .parallax3-hover-img {
+
+        width: 400px !important;
+        margin: 0 auto;
+        align-self: center;
+
+    }
+}
+
+@media (max-width: 1136px) {
+    .parallax3-hover-img {
+
+        max-height: 70%;
+        width: auto;
+        margin: 0 auto;
+        align-self: auto;
+
+    }
+}
+
+@media (max-width: 500px) {
+    .parallax3-hover-title {
+        font-size: 20px;
+    }
+}
+
+
+.product-card {
+    border-radius: 20px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    /*max-width: 300px;*/
+}
+
+.product-card-img-bg {
+    position: relative;
+    background: linear-gradient(to bottom right, #A75479, #DD6250, #E68A5E, #754394);
+    /*transition: all 1s !important;*/
+}
+
+.product-card-img-bg2 {
+    background: linear-gradient(to bottom left, #754394, #DD6250, #A75479, #E68A5E);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1 !important;
+}
+
+.product-card-img-bg:hover .product-card-img-bg2 {
+
+    opacity: 1 !important;
+}
+
+.product-card-img {
+    position: relative;
+    z-index: 10 !important;
+}
+
+.product-card-hr {
+    color: transparent;
+    opacity: 1;
+    border-radius: 2px;
+    background: linear-gradient(270deg, rgba(255, 74, 91, 0.5) 0%, #F36D5B 50.63%, rgba(231, 147, 91, 0.5) 100%);
+
+);
+    height: 2px;
+}
+
+.product-card-footer {
+    padding: 15px 30px;
+}
+
+.parallax3, .parallax4, .parallax5, .parallax6 {
+    /*margin-top: 56px !important;*/
+    margin-top: 0px !important;
+}
+
+.parallax4 {
+    background: url("/img/recipes.png") center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+}
+
+.parallax4-blur {
+    width: 100%;
+    height: 100vh !important;
+    backdrop-filter: blur(10px);
+    display: grid;
+
+}
+
+.parallax4 .row {
+    height: 500px !important;
+}
+
+.parallax4-title {
+    align-self: center;
+}
+
+.parallax6 {
+    height: 100vh;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.parallax6-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    color: white;
+    display: grid;
+}
+
+.parallax6-title {
+    align-self: center;
+}
+
+.parallax6-img {
+    height: 100%;
+    min-width: 100%;
+    width: auto;
+}
+
+.infography {
+    background: url('/img/s2.jpg') center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    font-family: BYekan !important;
+    text-align: center;
+    display: grid;
+    color: #fec700;
+}
+
+.infography-h1 {
+    font-size: 80px;
+    font-weight: 800;
+}
+
+.infography-p1 {
+    font-size: 40px;
+    text-align: justify;
+    max-width: 800px;
+}
+
+
+@media (max-width: 700px) {
+    .parallax2 {
+        background: url("/img/choco-mobile.jpg") center center no-repeat;
+        background-size: cover;
+        height: 100vh;
+        color: white;
+        padding: 20px;
+
+    }
+
+    .parallax6 {
+        height: 50vh;
+    }
+
+    .parallax6-section {
+        width: 50%;
+    }
+
+    .parallax3 {
+        background: url('/img/probg2.jpg') center center no-repeat;
+    }
+
+    .infography {
+        background: url('/img/s3.jpg') center center no-repeat;
+        background-size: cover;
+        height: calc(100vh - 56px);
+
+    }
+
+    .infography-p1 {
+        font-size: 25px;
+        max-width: 350px;
+
+    }
+}
+
+.contents-area {
+    min-height: 100vh;
+}
