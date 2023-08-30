@@ -32,7 +32,7 @@ export default {
   :deep(.recipe-card-title)
   {
     padding: 10px;
-    height: 80px;
+    height: 45px;
     font-size: 12px;
   }
   :deep(.recipe-card-title h5){
@@ -41,7 +41,7 @@ export default {
   }
 
   :deep(.recipe-card-play){
-    bottom: 60px;
+    bottom: 25px;
     left: 15px;
     width: 40px;
     height: 40px;

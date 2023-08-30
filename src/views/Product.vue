@@ -57,8 +57,8 @@
     <!--      </div>-->
     <!--    </div>-->
 
-    <div class="row xall fw-semibold p-xl-5">
-      <div class="col-xl-6" >
+    <div class="row xall fw-semibold p-3 p-md-5">
+      <div class="col-xl-6 p-0" >
         <div class="info-box d-grid ">
           <div class="mb-5" style="align-self: start">
 
@@ -174,6 +174,50 @@ export default {
 /*    text-align: center;*/
 /*  }*/
 /*}*/
+.recipe-img-shadow {
+  background-color: #ff0000;
+  overflow: visible;
+  border-radius: 15px;
+  width: 400px;
+  height: 400px
+}
+
+.recipe-img {
+  width: 480px !important;
+  border-radius: 15px
+}
+
+.relatedProductImgWrapper {
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  left: 0;
+  bottom: -100px
+}
+
+.relatedProductImg {
+  height: 200px
+}
+
+@media (max-width: 700px) {
+  .recipe-img-shadow {
+    width: 250px;
+    height: 250px
+  }
+
+  .recipe-img {
+    width: 340px !important;
+  }
+
+  .relatedProductImgWrapper {
+    bottom: -50px
+  }
+
+  .relatedProductImg {
+    height: 100px
+  }
+
+}
 
 .info-box {
   border-radius: 20px;
@@ -181,31 +225,25 @@ export default {
   margin: 120px 0px 0 0;
   position: relative;
   padding: 70px 40px;
-  /*font-size: 14px;*/
-
-}
-
-@media(max-width: 1200px) {
-  .info-box {
-    margin: 100px 20px 20px 20px;
-  }
+  font-size: 14px;
 }
 .info-box-title {
   border-radius: 30px;
   background-color: #ff0000;
   font-family: 'YekanBakhExtraBlack';
-  font-size: 40px;
+  font-size: 45px;
   line-height: 80px;
   font-weight: bolder;
   text-align: center;
   color: white;
-  width: 90%;
+  width: 70%;
   height: 80px;
   position: absolute;
-  right: 5%;
+  right: 15%;
   top: -40px;
 
 }
+
 .info-box-title2 {
   border-radius: 30px;
   background-color: #ff0000;
@@ -218,13 +256,42 @@ export default {
   width: 100%;
 
 }
-.xall{
+
+.xall {
   font-family: 'YekanBakh';
 }
-p{
+
+p {
   margin: 0 !important;
 }
-.info-box-text{
+
+.info-box-text {
   text-align: justify;
+}
+
+@media (max-width: 1200px) {
+  .info-box {
+    margin: 100px 20px 20px 20px;
+
+  }
+}
+@media (max-width: 700px) {
+  .info-box {
+    margin: 100px 0px 0px 0px;
+  }
+  .info-box-title {
+    border-radius: 30px;
+    background-color: #ff0000;
+    font-family: 'YekanBakhExtraBold';
+    font-size: 25px;
+    line-height: 80px;
+    width: 95%;
+    height: 80px;
+    position: absolute;
+    right: 2.5%;
+    top: -40px;
+
+  }
+
 }
 </style>

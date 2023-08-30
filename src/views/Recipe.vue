@@ -50,8 +50,7 @@
     <!--      </div>-->
     <!--    </div>-->
 
-
-    <div class="row xall fw-semibold p-5">
+    <div class="row xall fw-semibold p-3 p-md-5">
       <div class="col-xl-6">
         <div class="info-box d-grid  " style="position: relative; margin-bottom: 100px">
           <div class="mb-5" style="align-self: start">
@@ -61,7 +60,7 @@
               <br>
               {{ data.text }}</p>
           </div>
-          <div class="mt-5" style="align-self: end">
+          <div class="mt-lg-5" style="align-self: end">
             <div class="row">
               <div class="col-xl-6">
 
@@ -73,9 +72,10 @@
             </div>
           </div>
 
-          <div style="display:flex; justify-content: end; position: absolute; left: 0; bottom: -100px">
+          <div class="relatedProductImgWrapper">
             <div v-for="(item,index) in data.related_products" :key="index">
-              <a :href="'/product/'+item.id" class="p-3"><img style="height: 200px" :src="url+item.image" alt=""></a>
+              <a :href="'/product/'+item.id" class="p-2 p-md-3"><img class="relatedProductImg" :src="url+item.image"
+                                                                     alt=""></a>
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@
               <p class="m-0 ">{{ data.products_en }}</p>
             </div>
             <div class="col-12 text-end h-100 pb-5">
-              <div class="recipe-img-shadow  my-5"  >
+              <div class="recipe-img-shadow  my-5">
                 <img class="recipe-img mt-4 ms-4" :src="url+data.image" alt="">
               </div>
             </div>
@@ -149,15 +149,36 @@ export default {
   border-radius: 15px
 }
 
+.relatedProductImgWrapper {
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  left: 0;
+  bottom: -100px
+}
+
+.relatedProductImg {
+  height: 200px
+}
+
 @media (max-width: 700px) {
   .recipe-img-shadow {
-    width: 300px;
-    height: 300px
+    width: 250px;
+    height: 250px
   }
 
   .recipe-img {
-    width: 370px !important;
+    width: 340px !important;
   }
+
+  .relatedProductImgWrapper {
+    bottom: -50px
+  }
+
+  .relatedProductImg {
+    height: 100px
+  }
+
 }
 
 .info-box {
@@ -167,13 +188,6 @@ export default {
   position: relative;
   padding: 70px 40px;
   font-size: 14px;
-}
-
-@media(max-width: 1200px) {
-  .info-box {
-    margin: 100px 20px 20px 20px;
-
-  }
 }
 .info-box-title {
   border-radius: 30px;
@@ -212,7 +226,35 @@ export default {
 p {
   margin: 0 !important;
 }
-.info-box-text{
+
+.info-box-text {
   text-align: justify;
 }
+
+@media (max-width: 1200px) {
+  .info-box {
+    margin: 100px 20px 20px 20px;
+
+  }
+}
+@media (max-width: 700px) {
+  .info-box {
+    margin: 100px 0px 0px 0px;
+  }
+  .info-box-title {
+    border-radius: 30px;
+    background-color: #ff0000;
+    font-family: 'YekanBakhExtraBold';
+    font-size: 25px;
+    line-height: 80px;
+    width: 95%;
+    height: 80px;
+    position: absolute;
+    right: 2.5%;
+    top: -40px;
+
+  }
+
+}
+
 </style>
