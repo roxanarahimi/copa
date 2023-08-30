@@ -1,7 +1,12 @@
 <template>
 
   <main class="container-fluid p-0 m-0">
-    <div class="parallax3">
+<!--    <div class="parallax3" style="height: 100vh; background-color: #11a142">-->
+    <div class="parallax3" style="height: auto">
+
+      <img src="/img/probgg.png" class="d-none d-sm-block img-fluid w-100" alt="">
+      <img src="/img/probgg2.png" class="d-sm-none img-fluid w-100" alt="">
+
     </div>
     <category-nav :categories="categories" :getData="getData" :getDataByCat="getDataByCat"/>
     <div class="contents-area">

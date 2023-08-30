@@ -1,35 +1,28 @@
 <template>
   <!--  <i class="bi bi-search " style="font-size: 35px"></i>-->
   <header class="p-0" style="z-index: 100000; position: fixed">
-    <nav id="nav" class="navbar d-none d-lg-block navbar-expand navbar-dark px-xl-5"
-         style="background: transparent; color: white">
+    <nav id="nav" class="navbar d-none d-lg-block navbar-expand navbar-dark px-xxl-5" style="background: transparent; color: white">
       <div class="container-fluid">
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon "></span>
         </button>
         <div class="row collapse navbar-collapse " id="navbarText">
-          <ul class="col-lg-5 px-lg-0 navbar-nav  mb-2 mb-lg-0 " style="margin-top: 12px !important">
+          <ul class="col-lg-5 px-lg-0 navbar-nav p-0 mb-2 mb-lg-0 " style="margin-top: 12px !important">
             <li class="nav-item">
-              <div class="li-cover"></div>
               <router-link to="/" class="nav-link nav-link-white" aria-current="page">خانه</router-link>
             </li>
             <li class="nav-item">
-              <div class="li-cover"></div>
-
               <router-link to="/products" class="nav-link nav-link-white">محصولات</router-link>
             </li>
             <li class="nav-item">
-              <div class="li-cover"></div>
               <router-link to="/recipes" class="nav-link nav-link-white">دستور پخت</router-link>
             </li>
             <li class="nav-item">
-              <div class="li-cover"></div>
               <router-link to="/about" class="nav-link nav-link-white">درباره ما</router-link>
             </li>
 
             <li class="nav-item">
-              <div class="li-cover"></div>
               <router-link to="/teasers" class="nav-link nav-link-white">تیزر ها</router-link>
             </li>
           </ul>
@@ -223,33 +216,22 @@ export default {
 </script>
 
 <style scoped>
+
 .mobile-shadow-bg{
   background: linear-gradient(rgba(0,0,0,0.47), transparent)
 }
 .nav-item {
   position: relative;
-}
+  margin: 2px;
 
-.li-cover {
-  position: absolute;
-  width: 90%;
-  height: 90%;
-  right: 5px;
-  border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.2);
-  /*filter: blur(2px) !important;*/
-  /*margin-left: 5px;*/
 }
 
 .nav-link-white {
   color: white !important;
-  /*font-weight: bolder;*/
   z-index: 2000;
-
 }
-
-.nav-link {
-  position: relative;
+.nav-link-white:not(.bi-search) {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .side-menu-navlink {

@@ -92,6 +92,9 @@ body {
     padding-left: 20px !important;
     padding-right: 20px !important;
     color: black !important;
+    white-space: nowrap;
+    border-radius: 20px;
+
 }
 
 @media (min-width: 1200px) {
@@ -390,11 +393,11 @@ main {
 
 }
 
-.parallax3 {
-    background: url('/img/probg.jpg') center center no-repeat;
-    background-size: cover;
-    height: 100vh;
-}
+/*.parallax3 {*/
+/*    background: url('/img/probgg.png') center top no-repeat;*/
+/*    background-size: cover;*/
+/*    height: 100vh;*/
+/*}*/
 
 .parallax3-section {
     position: relative;
@@ -599,9 +602,10 @@ main {
         width: 50%;
     }
 
-    .parallax3 {
-        background: url('/img/probg2.jpg') center center no-repeat;
-    }
+    /*.parallax3 {*/
+    /*    background: url('/img/probgg2.png') center center no-repeat;*/
+    /*    background-size: cover;*/
+    /*}*/
 
     .infography {
         background: url('/img/s3.jpg') center center no-repeat;
