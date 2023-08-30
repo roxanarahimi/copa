@@ -58,7 +58,7 @@
     <!--    </div>-->
 
     <div class="row xall fw-semibold p-3 p-md-5">
-      <div class="col-xl-6 p-0" >
+      <div class="col-xl-6 px-0 px-lg-3" >
         <div class="info-box d-grid ">
           <div class="mb-5" style="align-self: start">
 
@@ -73,7 +73,7 @@
             <div class="row">
               <div class="col-xl-6">
                 <p class="info-box-title2">جدول ارزش غذایی در 100 گرم</p>
-                <div class="d-flex justify-content-between " v-for="(item,index) in features" :key="index">
+                <div class="d-flex justify-content-between" v-for="(item,index) in features" :key="index">
                   <p>{{ item.label }} ({{ item.unit }})</p>
                   <p>{{ item.value }}</p>
                 </div>
@@ -231,15 +231,15 @@ export default {
   border-radius: 30px;
   background-color: #ff0000;
   font-family: 'YekanBakhExtraBlack';
-  font-size: 45px;
+  font-size: 35px;
   line-height: 80px;
   font-weight: bolder;
   text-align: center;
   color: white;
-  width: 70%;
+  width: 85%;
   height: 80px;
   position: absolute;
-  right: 15%;
+  right: 7.5%;
   top: -40px;
 
 }

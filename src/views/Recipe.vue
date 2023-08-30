@@ -74,8 +74,7 @@
 
           <div class="relatedProductImgWrapper">
             <div v-for="(item,index) in data.related_products" :key="index">
-              <a :href="'/product/'+item.id" class="p-2 p-md-3"><img class="relatedProductImg" :src="url+item.image"
-                                                                     alt=""></a>
+              <a :href="'/product/'+item.id" class="p-2 p-md-3"><img class="relatedProductImg" :src="url+item.image" alt=""></a>
             </div>
           </div>
         </div>
@@ -83,7 +82,7 @@
       <div class="col-xl-6 pe-xl-5 py-xl-5 ">
         <div class="d-flex h-100">
           <img src="/img/devider.png" class="img-fluid d-none d-xl-block" style="max-width: 35px; height: 100%" alt="">
-          <div class="row px-xl-5" style="font-family: 'Arial'">
+          <div class="row px-xl-5 mb-5" style="font-family: 'Arial'">
             <div class="col-12 text-end " style="text-transform: uppercase !important">
               <h1 class="m-0 text-danger">{{ data.title_en }}</h1>
               <h1 class="m-0 ">{{ data.subTitle_en }}</h1>
@@ -193,15 +192,15 @@ export default {
   border-radius: 30px;
   background-color: #ff0000;
   font-family: 'YekanBakhExtraBlack';
-  font-size: 45px;
+  font-size: 35px;
   line-height: 80px;
   font-weight: bolder;
   text-align: center;
   color: white;
-  width: 70%;
+  width: 85%;
   height: 80px;
   position: absolute;
-  right: 15%;
+  right: 7.5%;
   top: -40px;
 
 }

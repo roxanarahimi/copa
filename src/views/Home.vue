@@ -18,7 +18,7 @@
             <h1 class="parallax2-h1">
               با کوپا
               <br class="d-lg-none">
-              روزت را
+              روزتو
               <br class="d-lg-none">
               بساز
             </h1>

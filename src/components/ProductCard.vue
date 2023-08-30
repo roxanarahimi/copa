@@ -31,6 +31,9 @@ export default {
 }
 </script>
 <style scoped>
+.product-card:hover .product-card-img{
+  transform:scale(1.1) rotate(5deg);
+}
 #p1{
   transition: all 3s !important;
 }
@@ -51,4 +54,6 @@ export default {
     padding: 5px 10px;
   }
 }
+
+
 </style>
