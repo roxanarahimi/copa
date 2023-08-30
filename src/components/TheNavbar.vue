@@ -46,7 +46,7 @@
         </div>
       </div>
     </nav>
-    <div id="nav-mobile" style="position: fixed; top:0; z-index: 1 !important" class="d-lg-none row p-0 m-0 w-100">
+    <div id="nav-mobile" style="position: fixed; top:0; z-index: 1 !important;" class="mobile-shadow-bg d-lg-none row p-0 m-0 w-100">
       <div class="col-4">
         <button class="btn border-0 nav-mobile-btn" @click="sideMenuToggle" data-flag="0"
                 style="font-size: 30px !important" type="button">
@@ -63,8 +63,7 @@
 
     </div>
 
-    <div class="d-md-none vh-100 side-menu side-menu-start"
-         style="position: fixed; top:0; right: -300px; height: 100vh">
+    <div class="d-md-none vh-100 side-menu side-menu-start" style="position: fixed; top:0; right: -300px; height: 100vh">
       <div class="py-0 px-3">
         <button class="btn border-0 " @click="sideMenuToggle" style="font-size: 30px !important">
           <i class="bi bi-list i-list text-light"></i>
@@ -167,7 +166,7 @@ export default {
       document.querySelectorAll('.nav-link').forEach((element) => {
         element.classList.add('nav-link-white')
       })
-
+      document.querySelector('#nav-mobile').classList.add('mobile-shadow-bg');
       document.querySelector('#nav-mobile').classList.remove('bg-light');
       document.querySelector('.i-list').classList.add('text-light');
       document.querySelectorAll('.li-cover').forEach((element) => {
@@ -186,6 +185,7 @@ export default {
         element.classList.remove('nav-link-white')
       })
 
+      document.querySelector('#nav-mobile').classList.remove('mobile-shadow-bg');
       document.querySelector('#nav-mobile').classList.add('bg-light');
       document.querySelector('.i-list').classList.remove('text-light');
 
@@ -223,6 +223,9 @@ export default {
 </script>
 
 <style scoped>
+.mobile-shadow-bg{
+  background: linear-gradient(rgba(0,0,0,0.47), transparent)
+}
 .nav-item {
   position: relative;
 }
@@ -257,4 +260,5 @@ export default {
   width: 30px !important;
   margin-right: 35px !important;
 }
+
 </style>
