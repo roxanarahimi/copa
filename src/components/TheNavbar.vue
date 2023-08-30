@@ -23,10 +23,10 @@
               <div class="li-cover"></div>
               <router-link to="/recipes" class="nav-link nav-link-white">دستور پخت</router-link>
             </li>
-            <!--            <li class="nav-item">-->
-            <!--              <div class="li-cover"></div>-->
-            <!--              <router-link to="/about"  class="nav-link nav-link-white">درباره ما</router-link>-->
-            <!--            </li>-->
+            <li class="nav-item">
+              <div class="li-cover"></div>
+              <router-link to="/about" class="nav-link nav-link-white">درباره ما</router-link>
+            </li>
 
             <li class="nav-item">
               <div class="li-cover"></div>
@@ -84,7 +84,10 @@
             <router-link class=" side-menu-navlink" to="/recipes"><img src="/img/cake.png" class="m-2" alt="">دستور پخت
             </router-link>
           </li>
-          <!--          <li @click="sideMenuToggle"><router-link class=" side-menu-navlink" to="/about"><img src="/img/people.png" class="m-2" alt="">درباره ما</router-link></li>-->
+          <li @click="sideMenuToggle">
+            <router-link class=" side-menu-navlink" to="/about"><img src="/img/people.png" class="m-2" alt="">درباره ما
+            </router-link>
+          </li>
           <li @click="sideMenuToggle">
             <router-link class=" side-menu-navlink" to="/teasers"><img src="/img/people.png" class="m-2" alt="">تیزر ها
             </router-link>

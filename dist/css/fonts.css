@@ -289,8 +289,18 @@
     url('../fonts/vazir-fonts/Vazir.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
 }
 
-
-
+@font-face {
+    font-family: 'YekanBakh';
+    src:url('../fonts/YekanBakh/YekanBakhFaNum-Regular.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+    font-family: 'YekanBakhExtraBlack';
+    src:url('../fonts/YekanBakh/YekanBakhFaNum-ExtraBlack.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+    font-family: 'YekanBakhExtraBold';
+    src:url('../fonts/YekanBakh/YekanBakhFaNum-ExtraBold.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
 
 
 
