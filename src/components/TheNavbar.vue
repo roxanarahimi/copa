@@ -56,7 +56,7 @@
 
     </div>
 
-    <div class="d-md-none vh-100 side-menu side-menu-start" style="position: fixed; top:0; right: -300px; height: 100vh">
+    <div class="d-lg-none vh-100 side-menu side-menu-start" style="position: fixed; top:0; right: -300px; height: 100vh">
       <div class="py-0 px-3">
         <button class="btn border-0 " @click="sideMenuToggle" style="font-size: 30px !important">
           <i class="bi bi-list i-list text-light"></i>

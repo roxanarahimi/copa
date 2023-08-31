@@ -27,23 +27,7 @@
         </div>
       </div>
     </section>
-    <section class="section  px-md-5 pb-5 justify-content-between vh-100" style="background-color: #006651; padding-top: 70px !important">
-    <div class="px-lg-5 container-fluid p-0 m-0 row">
-      <div class="m-0 p-0 py-3 mb-5" style="background-color: #006651; min-height: 60px; ">
-        <h3 class="title2 mt-5 pe-5 ms-5 d-inline">رسپی های کوپا </h3>
-      </div>
-      <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-3" :class="{'d-md-none d-lg-block': index === 3}"
-           v-for="(item, index) in 4" :key="index">
-        <recipe-card/>
-      </div>
-      <div class="text-center px-5">
-        <router-link to="/recipes" class="btn btn-outline-light px-lg-5  ">
-          رسپی های بیشتر
-        </router-link>
-      </div>
-    </div>
-
-    </section>
+    <main-page-recipes />
     <section class="section">
       <logo-slider/>
     </section>
@@ -58,7 +42,6 @@
 <script>
 // @ is an alias to /src
 import categorySlider from '@/components/CategorySlider'
-import recipeCard from '@/components/RecipeCard2'
 import {onMounted, onUnmounted, ref} from "vue";
 import app from "@/App";
 import LogoSlider from "@/components/LogoSlider";
@@ -66,25 +49,18 @@ import LogoSlider from "@/components/LogoSlider";
 
 import MainHero from "@/components/MainHero";
 import TheFooter from "@/components/TheFooter";
+import MainPageRecipes from "@/components/MainPageRecipes";
 
 export default {
   name: 'Home',
   components: {
+    MainPageRecipes,
     TheFooter,
     MainHero,
     LogoSlider,
-    categorySlider, recipeCard, app
+    categorySlider, app
   },
   setup() {
-    const foodSlides = ref()
-    const getFoodSlides = () => {
-      axios.get(app.setup().apiUrl + '/api/food/slides')
-          .then((response) => {
-            foodSlides.value = response.data;
-          })
-          .catch();
-    }
-
     const onScroll = (e) => {
       // e.preventDefault();
       document.removeEventListener('scroll', onScroll)
@@ -142,7 +118,6 @@ export default {
     }
 
     onMounted(() => {
-      getFoodSlides();
 
       let footer =   document.querySelectorAll('footer');
       footer.forEach((el)=>{
@@ -159,7 +134,7 @@ export default {
       })
     });
     return {
-      foodSlides, onScroll, onKeyUP
+       onScroll, onKeyUP
     }
   }
 

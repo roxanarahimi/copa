@@ -6,6 +6,7 @@
             class="category-nav-span d-inline-block mx-3 text-center category-nav-active">همه محصولات</span>
       <span :data-id="item.id" v-for="(item, index) in categories" :key="index" @click="getDataByCat(item.id)"
             class="category-nav-span d-inline-block mx-3 text-center">{{ item.title }}</span>
+
     </div>
     <div class="d-lg-none category-nav my-5 mx-3" style="position:relative;">
       <div class="row p-0">
@@ -53,7 +54,6 @@ export default {
         document.querySelector('.category-nav-mobile-options').setAttribute('style','top:50px');
 
       }
-
 
       let flag = document.querySelector('.category-nav-mobile-btn').getAttribute('data-flag');
       if (flag == 0) {

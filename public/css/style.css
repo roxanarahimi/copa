@@ -308,9 +308,7 @@ a, a:hover {
 /*}*/
 
 .recipe-card-title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+
     width: 100%;
     height: 100px;
     background-color: #00a388;
@@ -324,7 +322,7 @@ a, a:hover {
     width: 60px;
     height: 60px;
     position: absolute;
-    bottom: 80px;
+    bottom: 65px;
     left: 50px;
     border-radius: 20px;
     background-color: #006651;
@@ -568,7 +566,7 @@ main {
     font-family: BYekan !important;
     text-align: center;
     display: grid;
-    color: #fec700;
+    color: #692E0E;
 }
 
 .infography-h1 {

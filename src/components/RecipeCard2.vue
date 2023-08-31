@@ -1,12 +1,12 @@
 <template>
-  <router-link class="" :to="'/recipe/1'">
+  <router-link class="" :to="'/recipe/'+recipe.id">
     <div class="recipe-card2 mb-3 text-center">
       <div class="w-100 px-1 recipe-card2-img-wrapper">
-        <img class="w-100 h-100 mx-auto recipe-card2-img" :src="'/img/image8.png'" alt="">
+        <img class="w-100 h-100 mx-auto recipe-card2-img" :src="url+recipe.thumb" alt="">
       </div>
       <div class="pt-0">
         <div class="recipe-card2-title">
-          <p class="m-3" > کوکی ساده </p>
+          <p class="m-3" > {{ recipe.title }} </p>
         </div>
       </div>
     </div>
