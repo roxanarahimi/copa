@@ -1,31 +1,28 @@
 <template>
   <router-link class="" :to="'/recipe/1'">
-    <div class="p-lg-3">
-      <div class="recipe-card mb-3 text-center" style="background-color: #00a388">
-        <div class="w-100 p-3 p-lg-5 mb-3 mb-lg-5">
-          <img class="w-100 h-100 mx-auto" style="border-radius: 50%" :src="'/img/image8.png'" alt="">
-        </div>
-
-        <div class="p-3">
-          <div class="d-inline-block" style="background-color: #006651; color: white; border-radius: 10px;  ">
-            <h5 class="m-3"> کوکی ساده </h5>
-          </div>
+    <div class="recipe-card2 mb-3 text-center">
+      <div class="w-100 px-1 recipe-card2-img-wrapper">
+        <img class="w-100 h-100 mx-auto recipe-card2-img" :src="'/img/image8.png'" alt="">
+      </div>
+      <div class="pt-0">
+        <div class="recipe-card2-title">
+          <p class="m-3" > کوکی ساده </p>
         </div>
       </div>
-
     </div>
   </router-link>
 </template>
 
 <script>
 import app from "@/App";
+
 export default {
-  props: [ 'recipe' ],
-  components: { app },
-  setup(){
+  props: ['recipe'],
+  components: {app},
+  setup() {
     const url = app.setup().apiUrl;
 
-    return{
+    return {
       url
     }
   }
@@ -34,25 +31,55 @@ export default {
 </script>
 
 <style scoped>
-@media (max-width: 700px) {
-  :deep(.recipe-card-title)
-  {
+:deep(.recipe-card2) {
+  border-radius: 20px !important;
+  background-color: #00a388;
+  padding: 45px 35px 1px 35px;
+}
+
+:deep(.recipe-card2-img-wrapper) {
+  margin-bottom: 40px !important;
+  min-height: 50px !important;
+}
+:deep(.recipe-card2-img) {
+  border-radius: 50%
+}
+
+:deep(.recipe-card2-title) {
+  margin-bottom: 20px !important;
+  background-color: rgb(0, 102, 81);
+  border-radius: 10px;
+  color: white;
+  white-space: nowrap;
+
+}
+
+:deep(.recipe-card2-title p) {
+  line-height: 64px !important;
+  font-size: 20px !important;
+}
+
+@media(max-width: 700px){
+  :deep(.recipe-card2) {
     padding: 10px;
-    height: 80px;
-    font-size: 12px;
-  }
-  :deep(.recipe-card-title h5){
-    font-size: 15px;
-    font-weight: bold;
   }
 
-  :deep(.recipe-card-play){
-    bottom: 60px;
-    left: 15px;
-    width: 40px;
-    height: 40px;
-    font-size: 30px !important;
-    border-radius: 15px;
+  :deep(.recipe-card2-img-wrapper) {
+    margin-bottom: 20px !important;
   }
+  :deep(.recipe-card2-img) {
+    border-radius: 50%
+  }
+
+  :deep(.recipe-card2-title) {
+    margin-bottom: 0px !important;
+  }
+
+  :deep(.recipe-card2-title p) {
+    line-height: 50px !important;
+    font-size: 15px !important;
+  }
+
 }
+
 </style>

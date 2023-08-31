@@ -13,13 +13,13 @@
     </section>
     <section class="section parallax2">
       <div class="row h-100">
-        <div class="col-lg-12 text-center d-grid">
+        <div class="col-8 col-md-8 col-lg-5 mx-auto text-center d-grid h-100" style="backdrop-filter: blur(5px)">
           <div class="" style="align-self: center">
             <h1 class="parallax2-h1">
               با کوپا
-              <br class="d-lg-none">
+              <br class="d-md-none">
               روزتو
-              <br class="d-lg-none">
+              <br class="d-md-none">
               بساز
             </h1>
             <button class="parallax2-btn "> توضیحات بیشتر</button>
@@ -27,23 +27,21 @@
         </div>
       </div>
     </section>
-    <section class="section container-fluid p-0 m-0 row px-md-5 pb-5 justify-content-between"
-             style="background-color: #006651">
-      <div class="m-0 p-0 py-3 mb-5" style="background-color: #006651; min-height: 60px">
+    <section class="section  px-md-5 pb-5 justify-content-between vh-100" style="background-color: #006651; padding-top: 70px !important">
+    <div class="px-lg-5 container-fluid p-0 m-0 row">
+      <div class="m-0 p-0 py-3 mb-5" style="background-color: #006651; min-height: 60px; ">
         <h3 class="title2 mt-5 pe-5 ms-5 d-inline">رسپی های کوپا </h3>
-
       </div>
-      <div class="col-6 col-sm-6 col-md-4 col-lg-3 p-2 mb-3" :class="{'d-md-none d-lg-block': index === 3}"
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-3" :class="{'d-md-none d-lg-block': index === 3}"
            v-for="(item, index) in 4" :key="index">
         <recipe-card/>
       </div>
-
-
-      <div class="text-center p-5">
+      <div class="text-center px-5">
         <router-link to="/recipes" class="btn btn-outline-light px-lg-5  ">
           رسپی های بیشتر
         </router-link>
       </div>
+    </div>
 
     </section>
     <section class="section">

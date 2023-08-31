@@ -1,6 +1,6 @@
 <template>
     <footer class="container-fluid m-0 p-0">
-      <div class="container-fluid p-0 m-0 row p-5 text-center justify-content-between">
+      <div class="container-fluid p-0 m-0 row py-4 px-5 pt-5  text-center justify-content-between">
         <div class=" col-md-6 col-lg-4 mb-4 ">
           <h5 class="title2">راه های ارتباطی کوپا</h5>
 

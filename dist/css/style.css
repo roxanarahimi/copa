@@ -262,7 +262,6 @@ a, a:hover {
     background-size: cover;
     height: 100vh;
     color: white;
-    padding: 30px 100px;
 
 }
 
@@ -590,7 +589,7 @@ main {
         background-size: cover;
         height: 100vh;
         color: white;
-        padding: 20px;
+        padding-left: 0 20px;
 
     }
 
