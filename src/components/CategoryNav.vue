@@ -2,9 +2,9 @@
   <div class="d-flex justify-content-center">
     <!--        style="box-shadow: 1px 2px lightgrey"-->
     <div class="d-none d-lg-block d-lg-flex justify-content-lg-between  category-nav-mobile m-5">
-      <span data-id="all" @click="getData"
+      <span data-id="all" @click="getData('')"
             class="category-nav-span d-inline-block mx-3 text-center category-nav-active">همه محصولات</span>
-      <span :data-id="item.id" v-for="(item, index) in categories" :key="index" @click="getDataByCat(item.id)"
+      <span :data-id="item.id" v-for="(item, index) in categories" :key="index" @click="getData(item.id)"
             class="category-nav-span d-inline-block mx-3 text-center">{{ item.title }}</span>
 
     </div>
@@ -22,8 +22,8 @@
         </div>
         <div class="category-nav-mobile-options d-none w-50">
           <ul class="px-3 ">
-            <li data-id="all" @click="getData" class="category-nav-li">همه</li>
-            <li :data-id="item.id" @click="getDataByCat(item.id)" v-for="(item, index) in categories" :key="index"
+            <li data-id="all" @click="getData('')" class="category-nav-li">همه</li>
+            <li :data-id="item.id" @click="getData(item.id)" v-for="(item, index) in categories" :key="index"
                 class="category-nav-li">{{ item.title }}
             </li>
           </ul>
@@ -41,7 +41,7 @@ import {onMounted} from "vue";
 export default {
   name: "CategoryNav",
   props: [
-    'getData', 'getDataByCat', 'categories'
+    'getData', 'categories'
   ],
   setup(_props) {
     const categoryNavToggle = () => {
@@ -65,14 +65,9 @@ export default {
       }
     };
 
-    const getData = () => {
-      _props.getData();
+    const getData = (id) => {
+      _props.getData(id);
       categoryNavToggle();
-    }
-    const getDataByCat = (id) => {
-      _props.getDataByCat(id);
-      categoryNavToggle();
-
     }
     onMounted(() => {
 
@@ -99,7 +94,8 @@ export default {
     })
 
     return {
-      categoryNavToggle, getData, getDataByCat,
+      categoryNavToggle, getData,
+
     }
   }
 }

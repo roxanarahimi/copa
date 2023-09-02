@@ -17,11 +17,9 @@ export default createStore({
     foodSlider: null,
     recipeCats: null,
     recipes: null,
-    recipesByCat: null,
     recipe: null,
     productsCats: null,
     products: null,
-    productsByCat: null,
     product: null,
     productFeatures: null,
   },
@@ -39,14 +37,8 @@ export default createStore({
             state.recipeCats = response.data;
           }).catch();
     },
-    getRecipes(state) {
-      axios.get(state.panelUrl + '/api/article')
-          .then((response) => {
-            state.recipes = response.data.data;
-          }).catch();
-    },
-    getRecipesByCat(state, catId) {
-      axios.get(state.panelUrl + '/api/article/by/category/' + catId)
+    getRecipes(state,id) {
+      axios.get(state.panelUrl + '/api/article?cat='+id)
           .then((response) => {
             state.recipes = response.data.data;
           }).catch();
@@ -63,16 +55,10 @@ export default createStore({
             state.productsCats = response.data;
           }).catch();
     },
-    getProducts(state) {
-      axios.get(state.panelUrl + '/api/product')
+    getProducts(state,id) {
+      axios.get(state.panelUrl + '/api/product?cat='+id)
           .then((response) => {
-            this.data = response.data;
-          }).catch();
-    },
-    getProductsByCat(state,catId) {
-      axios.get(state.panelUrl + '/api/product/by/category/'+catId)
-          .then((response) => {
-            this.data = response.data;
+            state.products = response.data;
           }).catch();
     },
     getProduct(state, id) {
@@ -88,7 +74,6 @@ export default createStore({
         // }
       }).catch();
     }
-
   },
   actions: {
     getFoodSlider(context) {

@@ -50,7 +50,7 @@
     <!--      </div>-->
     <!--    </div>-->
 
-    <div class="row xall fw-semibold p-3 p-md-5">
+    <div v-if="data" class="row xall fw-semibold p-3 p-md-5">
       <div class="col-xl-6">
         <div class="info-box d-grid  " style="position: relative; margin-bottom: 100px">
           <div class="mb-5" style="align-self: start">
@@ -104,31 +104,28 @@
 <script>
 import productSlider from "@/components/ProductSlider";
 import productCard from "@/components/ProductCard";
-import {onMounted, ref} from "vue";
-import app from "@/App";
+import {computed, onMounted} from "vue";
 import {useRoute} from "vue-router/dist/vue-router";
+import {useStore} from "vuex";
 
 export default {
   components: {
-    productSlider, productCard, app
+    productSlider, productCard
   },
   setup() {
 
     const router = useRoute();
-    const data = ref({});
-    const url = app.setup().apiUrl;
-    const getData = () => {
-      axios.get(url + '/api/article/' + router.params.id)
-          .then((response) => {
-            data.value = response.data
-          })
-          .catch((error) => console.error(error))
+    const store = useStore();
+    const url = store.state.panelUrl;
+    const getData = (id) => {
+      store.commit('getRecipe',id);
     }
     onMounted(() => {
-      getData();
+      getData(router.params.id);
     })
     return {
-      data, getData, url, router,
+      data: computed(()=>store.state.recipe),
+      getData, url, router,
     }
   }
 }
