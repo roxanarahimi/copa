@@ -11,15 +11,15 @@
 </template>
 
 <script>
-import app from "@/App";
+import {useStore} from "vuex";
+
 export default {
   props: [ 'recipe' ],
-  components: { app },
   setup(){
-    const url = app.setup().apiUrl;
-
+    const store = useStore()
+    const url = store.state.panelUrl;
     return{
-      url
+      url,store
     }
   }
 

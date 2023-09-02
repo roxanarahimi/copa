@@ -107,6 +107,7 @@ import productSlider from "@/components/ProductSlider";
 import {useRoute} from "vue-router/dist/vue-router";
 import {onMounted, ref} from "vue";
 import app from "@/App";
+import {useStore} from "vuex";
 
 export default {
   components: {
@@ -116,8 +117,9 @@ export default {
 
     const router = useRoute();
     const data = ref({});
+    const store = useStore();
     const features = ref([]);
-    const url = app.setup().apiUrl;
+    const url = store.state.panelUrl;
     const getData = () => {
       axios.get(url + '/api/product/' + router.params.id)
           .then((response) => {
