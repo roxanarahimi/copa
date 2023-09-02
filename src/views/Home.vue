@@ -14,7 +14,7 @@
     <section class="section parallax2">
       <div class="row h-100">
         <div class="col-8 col-md-8 col-lg-5 mx-auto text-center d-grid h-100" style="backdrop-filter: blur(5px)">
-          <div class="" style="align-self: center">
+          <div class="about1" style="align-self: center">
             <h1 class="parallax2-h1">
               با کوپا
               <br class="d-md-none">
@@ -22,7 +22,11 @@
               <br class="d-md-none">
               بساز
             </h1>
-            <button class="parallax2-btn "> توضیحات بیشتر</button>
+            <button class="parallax2-btn" @click="showAboutTxt" > توضیحات بیشتر</button>
+          </div>
+          <div class="about2 d-none" style="align-self: center">
+            <h2 class="parallax2-h1">درباره کوپا</h2>
+            <p  class="px-lg-5" style="font-size: 18px; font-weight: 400; text-align: justify">کوپا برند اصلی سبد محصولات شیرین شرکت آماده لذیذ می‌باشد. کارخانه تولیدی آماده لذیذ ۲، در بهار سال ۱۳۹۴ به جهت تولید انواع بیسکوییت، ویفر، شکلات صبحانه، آدامس، ژله و … با برند اصلی کوپا، شروع به فعالیت نمود. هدف از تولید این محصولات، عرضه محصولات با کیفیت و استاندارد روز جهانی به مصرف کنندگان عزیز ایرانی است.</p>
           </div>
         </div>
       </div>
@@ -117,6 +121,10 @@ export default {
       }
     }
 
+    const showAboutTxt = ()=>{
+      document.querySelector('.about1').classList.add('d-none');
+      document.querySelector('.about2').classList.remove('d-none');
+    }
     onMounted(() => {
 
       let footer =   document.querySelectorAll('footer');
@@ -124,7 +132,8 @@ export default {
         if(!el.classList.contains('xoxo')) {
           el.classList.add('d-none');
         }
-      })
+      });
+
     });
     onUnmounted(()=>{
 
@@ -134,7 +143,7 @@ export default {
       })
     });
     return {
-       onScroll, onKeyUP
+       onScroll, onKeyUP, showAboutTxt
     }
   }
 

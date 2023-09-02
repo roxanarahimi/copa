@@ -40,6 +40,7 @@ export default {
   setup() {
     const data = ref([]);
     const categories = ref([]);
+
     const getCategories = () => {
       axios.get(app.setup().apiUrl + '/api/category/product')
           .then((response) => {
