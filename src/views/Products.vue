@@ -42,15 +42,7 @@ export default {
   setup() {
     const store = useStore();
     const getCategories = () => {
-      let myPromise = new Promise(function(resolve, reject) {
         store.commit('getProductCats');
-        resolve();
-        reject();
-      });
-      myPromise.then(
-          function(value) { handleCategoryNav() },
-          function(error) { console.log(error) }
-      );
     };
     const getData = (id) => {
       store.commit('getProducts', id);
@@ -59,31 +51,10 @@ export default {
       getCategories();
       getData('');
     });
-    const handleCategoryNav = ()=>{
-      document.querySelectorAll('.category-nav-span').forEach((element) => {
-        element.addEventListener('click', () => {
-          document.querySelector('.category-nav-active').classList.remove('category-nav-active');
-          element.classList.add('category-nav-active');
-          document.querySelector('.all_li').innerHTML=element.innerHTML;
-        })
-      });
-      document.querySelectorAll('.category-nav-li').forEach((element) => {
-        element.addEventListener('click', () => {
-          document.querySelector('.all_li').innerHTML=element.innerHTML;
-          document.querySelector('.category-nav-active').classList.remove('category-nav-active');
-          document.querySelectorAll('.category-nav-span').forEach((el) => {
-            if (el.getAttribute('data-id') == element.getAttribute('data-id')){
-              el.classList.add('category-nav-active');
-            }
-          });
-
-        })
-      });
-    }
     return {
       data: computed(()=>store.state.products),
       categories: computed(()=>store.state.productsCats),
-      getData, getCategories,store, handleCategoryNav
+      getData, getCategories,store
     }
   },
 

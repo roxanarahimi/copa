@@ -37,8 +37,7 @@
 <script>
 import recipeCard from '@/components/RecipeCard'
 import CategoryNav from "@/components/CategoryNav";
-import {computed, onMounted, ref} from "vue";
-import app from "@/App";
+import {computed, onMounted} from "vue";
 import {useStore} from "vuex";
 
 export default {
@@ -50,15 +49,7 @@ export default {
   setup() {
     const store = useStore();
     const getCategories = () => {
-      let myPromise = new Promise(function(resolve, reject) {
         store.commit('getRecipeCats');
-        resolve();
-        reject();
-      });
-      myPromise.then(
-          function(value) { handleCategoryNav() },
-          function(error) { console.log(error) }
-      );
     };
     const getData = (id) => {
       store.commit('getRecipes', id);
@@ -67,31 +58,10 @@ export default {
       getCategories();
       getData('');
     });
-    const handleCategoryNav = ()=>{
-      document.querySelectorAll('.category-nav-span').forEach((element) => {
-        element.addEventListener('click', () => {
-          document.querySelector('.category-nav-active').classList.remove('category-nav-active');
-          element.classList.add('category-nav-active');
-          document.querySelector('.all_li').innerHTML=element.innerHTML;
-        })
-      });
-      document.querySelectorAll('.category-nav-li').forEach((element) => {
-        element.addEventListener('click', () => {
-          document.querySelector('.all_li').innerHTML=element.innerHTML;
-          document.querySelector('.category-nav-active').classList.remove('category-nav-active');
-          document.querySelectorAll('.category-nav-span').forEach((el) => {
-            if (el.getAttribute('data-id') == element.getAttribute('data-id')){
-              el.classList.add('category-nav-active');
-            }
-          });
-
-        })
-      });
-    }
     return {
       data: computed(()=>store.state.recipes),
       categories: computed(()=>store.state.recipeCats),
-      getData, getCategories,store, handleCategoryNav
+      getData, getCategories,store
     }
   }
 }

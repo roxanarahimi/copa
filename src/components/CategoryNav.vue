@@ -54,7 +54,6 @@ export default {
         document.querySelector('.category-nav-mobile-options').setAttribute('style','top:50px');
 
       }
-
       let flag = document.querySelector('.category-nav-mobile-btn').getAttribute('data-flag');
       if (flag == 0) {
         document.querySelector('.category-nav-mobile-options').classList.add('d-none');
@@ -66,12 +65,43 @@ export default {
     };
 
     const getData = (id) => {
-      _props.getData(id);
+      let myPromise = new Promise(function(resolve, reject) {
+        _props.getData(id);
+        resolve();
+        reject();
+      });
+      myPromise.then(
+          function(value) {
+              handleCategoryNav();
+          },
+          function(error) { console.log(error) }
+      );
       categoryNavToggle();
     }
-    onMounted(() => {
 
+    const handleCategoryNav = ()=>{
+      document.querySelectorAll('.category-nav-span').forEach((element) => {
+        element.addEventListener('click', () => {
+          document.querySelector('.category-nav-active').classList.remove('category-nav-active');
+          element.classList.add('category-nav-active');
+          document.querySelector('.all_li').innerHTML=element.innerHTML;
+        })
+      });
+      document.querySelectorAll('.category-nav-li').forEach((element) => {
+        element.addEventListener('click', () => {
+          document.querySelector('.all_li').innerHTML=element.innerHTML;
+          document.querySelector('.category-nav-active').classList.remove('category-nav-active');
+          document.querySelectorAll('.category-nav-span').forEach((el) => {
+            if (el.getAttribute('data-id') == element.getAttribute('data-id')){
+              el.classList.add('category-nav-active');
+            }
+          });
 
+        })
+      });
+    }
+
+    const handleMobileNav = ()=>{
       document.addEventListener('click', function (e) {
         e = e || window.event;
         var target = e.target || e.srcElement;
@@ -90,11 +120,13 @@ export default {
         }
 
       });
-
+    }
+    onMounted(() => {
+      handleMobileNav()
     })
 
     return {
-      categoryNavToggle, getData,
+      categoryNavToggle, getData, handleCategoryNav, handleMobileNav
 
     }
   }
