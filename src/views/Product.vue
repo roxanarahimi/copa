@@ -62,7 +62,7 @@
         <div class="info-box d-grid ">
           <div class="mb-5" style="align-self: start">
 
-            <div class="info-box-title mx-auto">{{ data.title }}</div>
+            <div class="info-box-title mx-auto" :style="{ backgroundColor: data.color }">{{ data.title }}</div>
             <p class="info-box-text">
               ویژگی
               <br>
@@ -72,11 +72,11 @@
           <div class="mt-5" style="align-self: end">
             <div class="row">
               <div class="col-xl-6">
-                <p class="info-box-title2">جدول ارزش غذایی در 100 گرم</p>
-                <div class="d-flex justify-content-between" v-for="(item,index) in features" :key="index">
-                  <p>{{ item.label }} ({{ item.unit }})</p>
-                  <p>{{ item.value }}</p>
-                </div>
+                <a v-if="data.link" :href="data.link" target="_blank" class="d-block info-box-title2"  :style="{ backgroundColor: data.color }">خرید اینترنتی</a>
+<!--                <div class="d-flex justify-content-between" v-for="(item,index) in features" :key="index">-->
+<!--                  <p>{{ item.label }} ({{ item.unit }})</p>-->
+<!--                  <p>{{ item.value }}</p>-->
+<!--                </div>-->
               </div>
             </div>
           </div>
@@ -85,11 +85,11 @@
       <div class="col-xl-6  p-5 p-xl-0 pe-xl-5 py-xl-5 ">
        <div class="d-flex">
          <img src="/img/devider.png" class="img-fluid d-none d-xl-block" style="max-width: 35px" alt="">
-         <div class="row px-xl-5" style="font-family: 'Arial'">
+         <div class="row px-xl-5 " style="font-family: 'Arial'">
            <div class="col-12 text-end" style="text-transform: uppercase !important">
-             <h1 class="m-0 text-danger">{{ data.title_en }}</h1>
-             <h1 class="m-0 ">{{ data.subTitle }}</h1>
-             <p class="m-0 ">{{ data.flavor_en }}</p>
+             <h1 v-if="data.title_en" class="m-0 fw-bold" :style="{ color: data.color }">{{ data.title_en }}</h1>
+             <h1 v-if="data.subTitle" class="m-0 fw-bold">{{ data.subTitle }}</h1>
+             <h5 v-if="data.flavor_en" class="m-0  fw-bold">{{ data.flavor_en }}</h5>
            </div>
            <div class="col-12 text-end">
              <img class="img-fluid" :src="url+data.image" alt="">
@@ -231,7 +231,7 @@ export default {
 }
 .info-box-title {
   border-radius: 30px;
-  background-color: #ff0000;
+  /*background-color: #ff0000;*/
   font-family: 'YekanBakhExtraBlack';
   font-size: 35px;
   line-height: 80px;
@@ -248,7 +248,7 @@ export default {
 
 .info-box-title2 {
   border-radius: 30px;
-  background-color: #ff0000;
+  /*background-color: #ff0000;*/
   font-family: 'YekanBakhExtraBold';
   line-height: 50px;
   height: 50px;
@@ -258,7 +258,9 @@ export default {
   width: 100%;
 
 }
-
+.info-box-title2:hover {
+  background-color: green !important;
+}
 .xall {
   font-family: 'YekanBakh';
 }
