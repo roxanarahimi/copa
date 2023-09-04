@@ -81,7 +81,7 @@
             </router-link>
           </li>
           <li @click="sideMenuToggle">
-            <router-link class=" side-menu-navlink" to="/teasers"><img src="/img/people.png" class="m-2" alt="">تیزر ها
+            <router-link class=" side-menu-navlink" to="/teasers"><img src="/img/YouTube.png" class="m-2" alt="">تیزر ها
             </router-link>
           </li>
         </ul>
