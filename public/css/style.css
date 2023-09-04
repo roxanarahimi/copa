@@ -511,27 +511,27 @@ main {
 }
 
 .parallax4 {
-    background: url("/img/recipes.png") center center no-repeat;
-    background-size: cover;
-    height: 100vh;
-    color: white;
+    /*background: url("/img/recipes.png") center center no-repeat;*/
+    /*background-size: cover;*/
+    /*height: 100vh;*/
+    /*color: white;*/
 }
 
-.parallax4-blur {
-    width: 100%;
-    height: 100vh !important;
-    backdrop-filter: blur(10px);
-    display: grid;
+/*.parallax4-blur {*/
+/*    width: 100%;*/
+/*    height: 100vh !important;*/
+/*    backdrop-filter: blur(10px);*/
+/*    display: grid;*/
 
-}
+/*}*/
 
-.parallax4 .row {
-    height: 500px !important;
-}
+/*.parallax4 .row {*/
+/*    height: 500px !important;*/
+/*}*/
 
-.parallax4-title {
-    align-self: center;
-}
+/*.parallax4-title {*/
+/*    align-self: center;*/
+/*}*/
 
 .parallax6 {
     height: 100vh;
@@ -582,6 +582,12 @@ main {
 
 
 @media (max-width: 700px) {
+    .parallax4 {
+        /*background: url("/img/recipes2.png") center center no-repeat;*/
+        /*background-size: cover;*/
+        /*height: 100vh;*/
+        /*color: white;*/
+    }
     .parallax2 {
         background: url("/img/choco-mobile.jpg") center center no-repeat;
         background-size: cover;

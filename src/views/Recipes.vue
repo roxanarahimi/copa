@@ -1,16 +1,19 @@
 <template>
   <main class="container-fluid p-0 m-0">
     <div class="parallax4 p-0 m-0 ">
-      <div class="container-fluid p-0 m-0 row justify-content-lg-end">
-        <div class="col-6 col-md-4 col-lg-3 h-100 p-0">
+<!--      <div class="container-fluid p-0 m-0 row justify-content-lg-end">-->
+<!--        <div class="col-6 col-md-4 col-lg-3 h-100 p-0">-->
 
-          <div class="parallax4-blur text-center">
+<!--          <div class="parallax4-blur text-center">-->
 
-            <h1 class="parallax4-title mx-auto">دسر های ساده و آسان</h1>
-          </div>
+<!--            <h1 class="parallax4-title mx-auto">دسر های ساده و آسان</h1>-->
+<!--          </div>-->
 
-        </div>
-      </div>
+<!--        </div>-->
+<!--      </div>-->
+
+      <img src="/img/recipes.png" class="d-none d-sm-block img-fluid w-100" alt="">
+      <img src="/img/recipes2.png" class="d-sm-none img-fluid w-100" alt="">
     </div>
 
 
@@ -55,6 +58,7 @@ export default {
       store.commit('getRecipes', id);
     };
     onMounted(() => {
+      // alert(window.innerHeight + ',' + window.innerWidth)
       getCategories();
       getData('');
     });
