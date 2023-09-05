@@ -84,7 +84,7 @@
       </div>
       <div class="col-xl-6  p-5 p-xl-0 pe-xl-5 py-xl-5 ">
        <div class="d-flex">
-         <img src="/img/devider.png" class="img-fluid d-none d-xl-block" style="max-width: 35px" alt="">
+         <img src="/img/devider.png" class="img-fluid d-none d-xl-block" :style="{ backgroundColor: data.color }" style="max-width: 35px" alt="">
          <div class="row px-xl-5 " style="font-family: 'Arial'">
            <div class="col-12 text-end" style="text-transform: uppercase !important">
              <h1 v-if="data.title_en" class="m-0 fw-bold" :style="{ color: data.color }">{{ data.title_en }}</h1>
