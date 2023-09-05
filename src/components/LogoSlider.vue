@@ -12,7 +12,7 @@
          <!--        <Pagination/>-->
        </template>
      </Carousel>
-     <Carousel class="d-none d-md-block d-lg-none" :itemsToShow="5.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
+     <Carousel class="d-none d-md-block d-lg-none"  :mouseDrag="true" :touchDrag="true" :itemsToShow="5.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
        <Slide v-for="slide in images" :key="slide">
          <div class="carousel__item px-4">
            <img :src="slide" style="width: 100%; height: auto;"/>
@@ -23,7 +23,7 @@
          <!--        <Pagination/>-->
        </template>
      </Carousel>
-     <Carousel class="d-none d-sm-block d-md-none " :itemsToShow="4.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
+     <Carousel class="d-none d-sm-block d-md-none " :mouseDrag="true" :touchDrag="true" :itemsToShow="4.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
        <Slide v-for="slide in images" :key="slide">
          <div class="carousel__item px-4">
            <img :src="slide" style="width: 100%; height: auto;"/>
@@ -34,7 +34,7 @@
          <!--        <Pagination/>-->
        </template>
      </Carousel>
-     <Carousel class="d-sm-none" :itemsToShow="3.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
+     <Carousel class="d-sm-none"                    :mouseDrag="true" :touchDrag="true" :itemsToShow="3.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
        <Slide v-for="slide in images" :key="slide">
          <div class="carousel__item px-4">
            <img :src="slide" style="width: 100%; height: auto;"/>
