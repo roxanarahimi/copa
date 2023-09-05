@@ -1,50 +1,52 @@
 <template>
-  <div class="px-lg-5 mx-auto py-4" style="background-color: #ffb700">
-    <Carousel class="d-none d-lg-block" :itemsToShow="8.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
-      <Slide v-for="slide in images" :key="slide">
-        <div class="carousel__item px-4">
-          <img :src="slide" style="width: 100%; height: auto;"/>
-        </div>
-      </Slide>
-      <template #addons>
-        <Navigation/>
-        <!--        <Pagination/>-->
-      </template>
-    </Carousel>
-    <Carousel class="d-none d-md-block d-lg-none" :itemsToShow="5.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
-      <Slide v-for="slide in images" :key="slide">
-        <div class="carousel__item px-4">
-          <img :src="slide" style="width: 100%; height: auto;"/>
-        </div>
-      </Slide>
-      <template #addons>
-        <Navigation/>
-        <!--        <Pagination/>-->
-      </template>
-    </Carousel>
-    <Carousel class="d-none d-sm-block d-md-none " :itemsToShow="4.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
-      <Slide v-for="slide in images" :key="slide">
-        <div class="carousel__item px-4">
-          <img :src="slide" style="width: 100%; height: auto;"/>
-        </div>
-      </Slide>
-      <template #addons>
-        <Navigation/>
-        <!--        <Pagination/>-->
-      </template>
-    </Carousel>
-    <Carousel class="d-sm-none" :itemsToShow="3.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
-      <Slide v-for="slide in images" :key="slide">
-        <div class="carousel__item px-4">
-          <img :src="slide" style="width: 100%; height: auto;"/>
-        </div>
-      </Slide>
-      <template #addons>
-        <Navigation/>
-        <!--        <Pagination/>-->
-      </template>
-    </Carousel>
-  </div>
+ <div class="logo-section" style="background-color: #006651">
+   <div class="px-lg-5 mx-auto py-4  " style="background-color: #ffb700">
+     <Carousel class="d-none d-lg-block" :itemsToShow="8.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
+       <Slide v-for="slide in images" :key="slide">
+         <div class="carousel__item px-4">
+           <img :src="slide" style="width: 100%; height: auto;"/>
+         </div>
+       </Slide>
+       <template #addons>
+         <Navigation/>
+         <!--        <Pagination/>-->
+       </template>
+     </Carousel>
+     <Carousel class="d-none d-md-block d-lg-none" :itemsToShow="5.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
+       <Slide v-for="slide in images" :key="slide">
+         <div class="carousel__item px-4">
+           <img :src="slide" style="width: 100%; height: auto;"/>
+         </div>
+       </Slide>
+       <template #addons>
+         <Navigation/>
+         <!--        <Pagination/>-->
+       </template>
+     </Carousel>
+     <Carousel class="d-none d-sm-block d-md-none " :itemsToShow="4.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
+       <Slide v-for="slide in images" :key="slide">
+         <div class="carousel__item px-4">
+           <img :src="slide" style="width: 100%; height: auto;"/>
+         </div>
+       </Slide>
+       <template #addons>
+         <Navigation/>
+         <!--        <Pagination/>-->
+       </template>
+     </Carousel>
+     <Carousel class="d-sm-none" :itemsToShow="3.0" :itemsToScroll="1" :wrapAround="true"  :autoplay="500" :transition="2000"  :snapAlign="'start'">
+       <Slide v-for="slide in images" :key="slide">
+         <div class="carousel__item px-4">
+           <img :src="slide" style="width: 100%; height: auto;"/>
+         </div>
+       </Slide>
+       <template #addons>
+         <Navigation/>
+         <!--        <Pagination/>-->
+       </template>
+     </Carousel>
+   </div>
+ </div>
 </template>
 
 

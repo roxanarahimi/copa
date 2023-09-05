@@ -1,9 +1,9 @@
 <template>
   <main class="container-fluid sectionsWrapper p-0 m-0" >
     <main-hero />
-    <section class="section infography" style="">
-      <div style="align-self: center; text-align: center">
-        <p class="infography-p1  mx-auto">
+    <section class="section infography px-5 px-md-0" style="">
+      <div style="align-self: center; text-align: center" class="">
+        <p class="infography-p1  mx-auto px-5 px-md-0">
           به دنیایی پر از عشق و خوشمزگی به نام کوپا خوش آمدید
           با کوپا ما به یک داستان هیجان‌انگیز شما رو دعوت می‌کنیم
           در این دنیای جذاب و هیجان‌انگیز هر قطره شیرینی به شما لبخند می‌زند و هرلحظه از زندگیتان را به یک سفر شیرین تبدیل می‌کند
@@ -32,7 +32,7 @@
       </div>
     </section>
     <main-page-recipes />
-    <section class="section">
+    <section class="section" >
       <logo-slider/>
     </section>
     <section class="section">
