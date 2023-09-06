@@ -103,7 +103,9 @@ body {
         padding-right: 30px !important;
     }
 
-
+    .vdoDesktop{
+        margin-top: -100px;
+    }
 }
 
 @media (max-width: 700px) {

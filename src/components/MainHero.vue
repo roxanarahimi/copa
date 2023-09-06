@@ -7,7 +7,7 @@
     <!--        <source src="/vdo/hero-mobile.mp4" type="video/mp4">-->
     <!--      </video>-->
 
-    <AdvancedVideo class="d-none d-md-block p-0" :cldVid="myVdo" autoplay muted loop/>
+    <AdvancedVideo class="d-none d-md-block p-0 vdoDesktop" :cldVid="myVdo" autoplay muted loop/>
     <AdvancedVideo class="d-md-none p-0" :cldVid="myVdoMobile" autoplay muted loop/>
   </section>
 </template>
