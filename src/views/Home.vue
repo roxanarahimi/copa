@@ -1,7 +1,7 @@
 <template>
   <main class="container-fluid sectionsWrapper p-0 m-0" >
     <main-hero />
-    <section class="section infography px-5 px-md-0" style="">
+    <section class="section infography px-4 px-md-0" style="">
       <div style="align-self: center; text-align: center" class="">
         <p class="infography-p1  mx-auto px-5 px-md-0">
           به دنیایی پر از عشق و خوشمزگی به نام کوپا خوش آمدید

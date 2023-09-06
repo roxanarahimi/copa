@@ -616,12 +616,13 @@ main {
     .infography {
         background: url('/img/s3.jpg') center center no-repeat;
         background-size: cover;
-        height: calc(100vh - 56px);
+        height: calc(100vh);
 
     }
 
     .infography-p1 {
-        font-size: 25px;
+        padding-top: 50px;
+        font-size: 20px;
         max-width: 350px;
 
     }
