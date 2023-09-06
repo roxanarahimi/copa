@@ -1,4 +1,6 @@
 body, html {
+    max-width: 1535px;
+    margin: 0 auto;
     font-family: Vazir !important;
     direction: rtl !important;
     text-align: right !important;
@@ -80,7 +82,7 @@ body {
 }
 
 #nav {
-    position: fixed !important;
+    /*position: fixed !important;*/
     top: 0;
     right: 0;
     width: 100%;

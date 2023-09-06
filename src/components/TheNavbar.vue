@@ -1,6 +1,6 @@
 <template>
   <!--  <i class="bi bi-search " style="font-size: 35px"></i>-->
-  <header class="p-0" style="z-index: 100000; position: fixed">
+  <header class="p-0 w-100" style="z-index: 100000; position: fixed; max-width: 1535px;">
     <nav id="nav" class="navbar d-none d-lg-block navbar-expand navbar-dark px-xxl-5" style="background: transparent; color: white">
       <div class="container-fluid">
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
