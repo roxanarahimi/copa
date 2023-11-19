@@ -22,7 +22,7 @@ export default {
   setup(_props){
     const cld = new Cloudinary({
       cloud: {
-        cloudName: "dw4cidvdw",
+        cloudName: "dpg1tz64p",
       },
     });
     const myVdo = cld.video(_props.vdo);
