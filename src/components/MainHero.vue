@@ -7,7 +7,8 @@
     <!--        <source src="/vdo/hero-mobile.mp4" type="video/mp4">-->
     <!--      </video>-->
 
-    <AdvancedVideo class="d-none d-md-block p-0 vdoDesktop" :cldVid="myVdo" autoplay muted loop/>
+    <AdvancedVideo class="d-none d-lg-block p-0 vdoDesktop" :cldVid="myVdo" autoplay muted loop />
+    <AdvancedVideo class="d-none d-md-block d-lg-none p-0 " :cldVid="myVdoTablet" autoplay muted loop/>
     <AdvancedVideo class="d-md-none p-0" :cldVid="myVdoMobile" autoplay muted loop/>
   </section>
 </template>
@@ -26,10 +27,14 @@ export default {
         cloudName: "dpg1tz64p",
       },
     });
-    const myVdo = cld.video("pp1vuwaeiufxnn1ozets");
-    const myVdoMobile = cld.video("mobile_400.800_peehvh");
+    // const myVdo = cld.video("pp1vuwaeiufxnn1ozets");
+    // const myVdoMobile = cld.video("mobile_400.800_peehvh");
+
+    const myVdo = cld.video("copa/dd");
+    const myVdoTablet = cld.video("copa/tt");
+    const myVdoMobile = cld.video("copa/mm");
     return{
-      cld, myVdo, myVdoMobile,
+      cld, myVdo, myVdoTablet, myVdoMobile,
     }
   }
 }
