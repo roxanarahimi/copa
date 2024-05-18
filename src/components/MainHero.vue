@@ -1,15 +1,18 @@
 <template>
   <section class="section parallax1 row p-0 m-0">
-    <!--      <video class="d-none d-md-block parallax1-video p-0" autoplay muted loop preload="auto" >-->
-    <!--        <source src="/vdo/hero.mp4" type="video/mp4">-->
-    <!--      </video>-->
-    <!--      <video class=" d-md-none parallax1-video-mobile p-0" autoplay muted loop preload="auto">-->
-    <!--        <source src="/vdo/hero-mobile.mp4" type="video/mp4">-->
-    <!--      </video>-->
+          <video class="d-none d-lg-block parallax1-video p-0" autoplay muted loop preload="auto" >
+            <source src="/vdo/d.mp4" type="video/mp4">
+          </video>
+          <video class="d-none d-md-block d-lg-none parallax1-video p-0" autoplay muted loop preload="auto" >
+            <source src="/vdo/t.mp4" type="video/mp4">
+          </video>
+          <video class=" d-md-none parallax1-video-mobile p-0" autoplay muted loop preload="auto">
+            <source src="/vdo/m.mp4" type="video/mp4">
+          </video>
 
-    <AdvancedVideo class="d-none d-lg-block p-0 vdoDesktop" :cldVid="myVdo" autoplay muted loop />
-    <AdvancedVideo class="d-none d-md-block d-lg-none p-0 " :cldVid="myVdoTablet" autoplay muted loop/>
-    <AdvancedVideo class="d-md-none p-0" :cldVid="myVdoMobile" autoplay muted loop/>
+<!--    <AdvancedVideo class="d-none d-lg-block p-0 vdoDesktop" :cldVid="myVdo" autoplay muted loop />-->
+<!--    <AdvancedVideo class="d-none d-md-block d-lg-none p-0 " :cldVid="myVdoTablet" autoplay muted loop/>-->
+<!--    <AdvancedVideo class="d-md-none p-0" :cldVid="myVdoMobile" autoplay muted loop/>-->
   </section>
 </template>
 
