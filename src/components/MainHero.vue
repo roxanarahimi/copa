@@ -10,6 +10,7 @@
             <source src="/vdo/m.mp4" type="video/mp4">
           </video>
 
+
 <!--    <AdvancedVideo class="d-none d-lg-block p-0 vdoDesktop" :cldVid="myVdo" autoplay muted loop />-->
 <!--    <AdvancedVideo class="d-none d-md-block d-lg-none p-0 " :cldVid="myVdoTablet" autoplay muted loop/>-->
 <!--    <AdvancedVideo class="d-md-none p-0" :cldVid="myVdoMobile" autoplay muted loop/>-->
