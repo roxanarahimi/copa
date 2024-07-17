@@ -62,17 +62,17 @@
         <div class="info-box d-grid ">
           <div class="mb-5" style="align-self: start">
 
-            <div class="info-box-title mx-auto" :style="{ backgroundColor: data.color }">{{ data.title }}</div>
+            <div class="info-box-title mx-auto" :style="{ backgroundColor: data.color }">{{ data.title_ar }}</div>
             <p class="info-box-text">
-              ویژگی
+              ملكية
               <br>
-              {{ data.text }}</p>
+              {{ data.text_ar }}</p>
           </div>
 
           <div class="mt-5" style="align-self: end">
             <div class="row">
               <div class="col-xl-6">
-                <a v-if="data.link" :href="data.link" target="_blank" class="d-block info-box-title2"  :style="{ backgroundColor: data.color }">خرید اینترنتی</a>
+                <a v-if="data.link" :href="data.link" target="_blank" class="d-block info-box-title2"  :style="{ backgroundColor: data.color }">التسوق عبر الانترنت</a>
 <!--                <div class="d-flex justify-content-between" v-for="(item,index) in features" :key="index">-->
 <!--                  <p>{{ item.label }} ({{ item.unit }})</p>-->
 <!--                  <p>{{ item.value }}</p>-->
