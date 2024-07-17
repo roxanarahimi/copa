@@ -1,5 +1,5 @@
 <template>
-  <router-link class="" :to="'/recipe/'+recipe.id">
+  <router-link class="" :to="'/ar/recipe/'+recipe.id">
     <div class="recipe-card2 mb-3 text-center">
       <div class="w-100 px-1 recipe-card2-img-wrapper">
         <img class="w-100 h-100 mx-auto recipe-card2-img" :src="url+recipe.thumb" alt="">

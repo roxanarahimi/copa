@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="'/recipe/'+recipe.id">
+  <router-link :to="'/ar/recipe/'+recipe.id">
   <div class="recipe-card mb-3">
     <img class="img-fluid w-100 recipe-card-img w-100 h-100" :src="url+recipe.thumb" alt="">
     <div class="recipe-card-title"><h5>{{ recipe.title_ar }}</h5><p>{{ recipe.product?.title_ar }}</p></div>

@@ -2,9 +2,9 @@
   <div class="d-flex justify-content-center">
     <!--        style="box-shadow: 1px 2px lightgrey"-->
     <div class="d-none d-lg-block d-lg-flex justify-content-lg-between  category-nav-mobile m-5">
-      <span data-id="all" @click="getData('')" class="category-nav-span d-inline-block mx-3 text-center category-nav-active">همه محصولات</span>
+      <span data-id="all" @click="getData('')" class="category-nav-span d-inline-block mx-3 text-center category-nav-active">جميع المنتجات</span>
       <span :data-id="item.id" v-for="(item, index) in categories" :key="index" @click="getData(item.id)"
-            class="category-nav-span d-inline-block mx-3 text-center">{{ item.title }}</span>
+            class="category-nav-span d-inline-block mx-3 text-center">{{ item.title_ar }}</span>
 
     </div>
     <div class="d-lg-none category-nav my-5 mx-3" style="position:relative;">
@@ -21,7 +21,7 @@
         </div>
         <div class="category-nav-mobile-options d-none w-50">
           <ul class="px-3 ">
-            <li data-id="all" @click="getData('')" class="category-nav-li">همه</li>
+            <li data-id="all" @click="getData('')" class="category-nav-li">کل</li>
             <li :data-id="item.id" @click="getData(item.id)" v-for="(item, index) in categories" :key="index"
                 class="category-nav-li">{{ item.title_ar }}
             </li>
