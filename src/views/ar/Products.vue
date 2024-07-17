@@ -17,7 +17,7 @@
          </div>
        </div>
        <div v-else class="text-center mb-5">
-         <p>محصولی موجود نمیباشد</p>
+         <p>لا يوجد منتج متاح</p>
        </div>
      </div>
     </div>
@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import productCard from "@/components/ProductCard";
-import productHeroSlider from "@/components/ProductHeroSlider";
-import CategoryNav from "@/components/CategoryNav";
+import productCard from "@/components/ar/ProductCard";
+import productHeroSlider from "@/components/ar/ProductHeroSlider";
+import CategoryNav from "@/components/ar/CategoryNav";
 import {computed, onMounted} from "vue";
 import {useStore} from "vuex";
 

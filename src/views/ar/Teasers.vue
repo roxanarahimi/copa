@@ -5,7 +5,7 @@
     <div class="col-9 col-lg-8 ">
 
       <h3 class="title3 position-relative" style="margin-top: 100px; font-family: YekanBakhExtraBold">
-        تیزر های کوپا
+        إعلانات كوبا
 
         <div style="position:absolute; top: 0; right:-60px;color:white; background-color: gray; width: 50px; height: 50px; align-self: center; border-radius: 5px">
           <i style="font-size: 50px; line-height: 50px;  " class="bi bi-play-fill"></i>
@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import TeaserSlider from "@/components/TeaserSlider";
-import TeaserCard from "@/components/VdoCard";
+import TeaserSlider from "@/components/ar/TeaserSlider";
+import TeaserCard from "@/components/ar/VdoCard";
 import {AdvancedVideo} from '@cloudinary/vue';
 import {Cloudinary} from "@cloudinary/url-gen";
 

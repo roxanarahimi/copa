@@ -27,7 +27,7 @@
           </div>
         </div>
         <div v-else class="text-center mb-5">
-          <p>دستور پختی موجود نمیباشد</p>
+          <p>لا توجد وصفة متاحة</p>
         </div>
       </div>
 
@@ -38,8 +38,8 @@
 </template>
 
 <script>
-import recipeCard from '@/components/RecipeCard'
-import CategoryNav from "@/components/CategoryNav";
+import recipeCard from '@/components/ar/RecipeCard'
+import CategoryNav from "@/components/ar/CategoryNav";
 import {computed, onMounted} from "vue";
 import {useStore} from "vuex";
 

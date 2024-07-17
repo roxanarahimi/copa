@@ -26,7 +26,7 @@
 
 
 <script>
-import productCard from "../components/ar/ProductCard";
+import productCard from "@/components/ar/ProductCard";
 
 export default {
   components: {productCard},

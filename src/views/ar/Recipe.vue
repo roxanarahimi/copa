@@ -54,20 +54,20 @@
       <div class="col-xl-6">
         <div class="info-box d-grid  " style="position: relative; margin-bottom: 100px">
           <div class="mb-5" style="align-self: start">
-            <div class="info-box-title mx-auto">{{ data.title }}</div>
+            <div class="info-box-title mx-auto">{{ data.title_ar }}</div>
             <p class="info-box-text">
-              روش تهیه
+              طريقة التحضير
               <br>
-              {{ data.text }}</p>
+              {{ data.text_ar }}</p>
           </div>
           <div class="mt-lg-5" style="align-self: end">
             <div class="row">
               <div class="col-xl-6">
 
                 <p style="white-space: pre-line;">
-                  مواد لازم
+                  المکونات
                   <br>
-                  {{ data.ingredients }}</p>
+                  {{ data.ingredients_ar }}</p>
               </div>
             </div>
           </div>
@@ -102,8 +102,8 @@
 </template>
 
 <script>
-import productSlider from "@/components/ProductSlider";
-import productCard from "@/components/ProductCard";
+import productSlider from "@/components/ar/ProductSlider";
+import productCard from "@/components/ar/ProductCard";
 import {computed, onMounted} from "vue";
 import {useRoute} from "vue-router/dist/vue-router";
 import {useStore} from "vuex";
