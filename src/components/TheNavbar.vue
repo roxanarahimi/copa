@@ -26,11 +26,12 @@
               <router-link to="/teasers" class="nav-link nav-link-white">تیزر ها</router-link>
             </li>
           </ul>
-          <ul class="col-lg-1 px-lg-0 navbar-nav p-0 mb-2 mb-lg-0 " style="margin-top: 12px !important">
-            <li class="nav-item">
-              <router-link to="/ar/" class="nav-link nav-link-white">العربیه</router-link>
-            </li>
-          </ul>
+<!--***********-->
+          <!--          <ul class="col-lg-1 px-lg-0 navbar-nav p-0 mb-2 mb-lg-0 " style="margin-top: 12px !important">-->
+<!--            <li class="nav-item">-->
+<!--              <router-link to="/ar/" class="nav-link nav-link-white">العربیه</router-link>-->
+<!--            </li>-->
+<!--          </ul>-->
         </div>
       </div>
     </nav>
@@ -47,9 +48,10 @@
 <!--      <div @click="searchAreaToggle" data-flag="0" class="search_btn col-4 d-flex justify-content-end">-->
 <!--        <i class="bi bi-search mt-2 nav-link nav-link-white " style="font-size: 30px !important"></i>-->
 <!--      </div>-->
+      <!--***********-->
 
 <!--      <div class="col-4 d-flex justify-content-end">-->
-<!--        <router-link to="/ar/" class="text-light mt-3 text-end"  type="button">-->
+<!--        <router-link to="/ar/" class="text-light mt-3 text-end lng"  type="button">-->
 <!--          العربیه-->
 <!--        </router-link>-->
 <!--      </div>-->
@@ -161,6 +163,7 @@ export default {
       document.querySelector('#nav-mobile').classList.add('mobile-shadow-bg');
       document.querySelector('#nav-mobile').classList.remove('bg-light');
       document.querySelector('.i-list').classList.add('text-light');
+      document.querySelector('.lng')?.classList.add('text-light');
       document.querySelectorAll('.li-cover').forEach((element) => {
         element.classList.remove('d-none');
       })
@@ -180,6 +183,7 @@ export default {
       document.querySelector('#nav-mobile').classList.remove('mobile-shadow-bg');
       document.querySelector('#nav-mobile').classList.add('bg-light');
       document.querySelector('.i-list').classList.remove('text-light');
+      document.querySelector('.lng')?.classList.remove('text-light');
 
       document.querySelectorAll('.li-cover').forEach((element) => {
         element.classList.add('d-none');

@@ -48,8 +48,8 @@
       <!--        <i class="bi bi-search mt-2 nav-link nav-link-white " style="font-size: 30px !important"></i>-->
       <!--      </div>-->
       <div class="col-4 d-flex justify-content-end">
-        <router-link to="/ar/" class="text-light mt-3 text-end"  type="button">
-          فارسی
+        <router-link to="/" class="text-light mt-3 text-end lng"  type="button">
+          پارسی
         </router-link>
       </div>
     </div>
@@ -63,23 +63,23 @@
       <div class="side-menu-body d-grid" style="height: calc(100vh - 150px)">
         <ul class="side-menu-ul">
           <li @click="sideMenuToggle">
-            <router-link class=" side-menu-navlink" to="/ar/"><img src="/img/house.png" class="m-2" alt="">خانه
+            <router-link class=" side-menu-navlink" to="/ar/"><img src="/img/house.png" class="m-2" alt="">بیت
             </router-link>
           </li>
           <li @click="sideMenuToggle">
-            <router-link class=" side-menu-navlink" to="/ar/products"><img src="/img/cookie.png" class="m-2" alt="">محصولات
+            <router-link class=" side-menu-navlink" to="/ar/products"><img src="/img/cookie.png" class="m-2" alt="">منتجات
             </router-link>
           </li>
           <li @click="sideMenuToggle">
-            <router-link class=" side-menu-navlink" to="/ar/recipes"><img src="/img/cake.png" class="m-2" alt="">دستور پخت
+            <router-link class=" side-menu-navlink" to="/ar/recipes"><img src="/img/cake.png" class="m-2" alt="">وصفات طبخ
             </router-link>
           </li>
           <li @click="sideMenuToggle">
-            <router-link class=" side-menu-navlink" to="/ar/about"><img src="/img/people.png" class="m-2" alt="">درباره ما
+            <router-link class=" side-menu-navlink" to="/ar/about"><img src="/img/people.png" class="m-2" alt="">معلومات عنا
             </router-link>
           </li>
           <li @click="sideMenuToggle">
-            <router-link class=" side-menu-navlink" to="/ar/teasers"><img src="/img/YouTube.png" class="m-2" alt="">تیزر ها
+            <router-link class=" side-menu-navlink" to="/ar/teasers"><img src="/img/YouTube.png" class="m-2" alt="">إعلانات تشويقية
             </router-link>
           </li>
         </ul>
@@ -160,6 +160,8 @@ export default {
       document.querySelector('#nav-mobile').classList.add('mobile-shadow-bg');
       document.querySelector('#nav-mobile').classList.remove('bg-light');
       document.querySelector('.i-list').classList.add('text-light');
+      document.querySelector('.lng').classList.add('text-light');
+
       document.querySelectorAll('.li-cover').forEach((element) => {
         element.classList.remove('d-none');
       })
@@ -179,6 +181,7 @@ export default {
       document.querySelector('#nav-mobile').classList.remove('mobile-shadow-bg');
       document.querySelector('#nav-mobile').classList.add('bg-light');
       document.querySelector('.i-list').classList.remove('text-light');
+      document.querySelector('.lng').classList.remove('text-light');
 
       document.querySelectorAll('.li-cover').forEach((element) => {
         element.classList.add('d-none');

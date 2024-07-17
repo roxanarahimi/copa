@@ -8,7 +8,7 @@
         <recipe-card :recipe="item.article" />
       </div>
       <div class="text-center px-5 mb-5">
-        <router-link to="/recipes" class="btn btn-outline-light px-lg-5  ">
+        <router-link to="/ar/recipes" class="btn btn-outline-light px-lg-5  ">
           المزيد من الوصفات
         </router-link>
       </div>
