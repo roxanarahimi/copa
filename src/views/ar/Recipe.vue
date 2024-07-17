@@ -74,7 +74,7 @@
 
           <div class="relatedProductImgWrapper">
             <div v-for="(item,index) in data.related_products" :key="index">
-              <a :href="'/product/'+item.id" class="p-2 p-md-3"><img class="relatedProductImg" :src="url+item.thumb" alt=""></a>
+              <a :href="'/ar/product/'+item.id" class="p-2 p-md-3"><img class="relatedProductImg" :src="url+item.thumb" alt=""></a>
             </div>
           </div>
         </div>
