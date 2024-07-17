@@ -10,25 +10,25 @@
         <div class="row collapse navbar-collapse justify-content-lg-between" id="navbarText">
           <ul class="col-lg-5 px-lg-0 navbar-nav p-0 mb-2 mb-lg-0 " style="margin-top: 12px !important">
             <li class="nav-item">
-              <router-link to="/" class="nav-link nav-link-white" aria-current="page">خانه</router-link>
+              <router-link to="/ar/" class="nav-link nav-link-white" aria-current="page">بیت</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/products" class="nav-link nav-link-white">محصولات</router-link>
+              <router-link to="/ar/products" class="nav-link nav-link-white">منتجات</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/recipes" class="nav-link nav-link-white">دستور پخت</router-link>
+              <router-link to="/ar/recipes" class="nav-link nav-link-white">وصفات طبخ</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/about" class="nav-link nav-link-white">درباره ما</router-link>
+              <router-link to="/ar/about" class="nav-link nav-link-white">معلومات عنا</router-link>
             </li>
 
             <li class="nav-item">
-              <router-link to="/teasers" class="nav-link nav-link-white">تیزر ها</router-link>
+              <router-link to="/ar/teasers" class="nav-link nav-link-white">إعلانات تشويقية</router-link>
             </li>
           </ul>
           <ul class="col-lg-1 px-lg-0 navbar-nav p-0 mb-2 mb-lg-0 " style="margin-top: 12px !important">
             <li class="nav-item">
-              <router-link to="/ar/" class="nav-link nav-link-white">العربیه</router-link>
+              <router-link to="/" class="nav-link nav-link-white">پارسی</router-link>
             </li>
           </ul>
         </div>
@@ -44,12 +44,12 @@
       <div class="col-4 text-center py-2">
         <img src="/img/logo.png" style="width: 70px" alt="">
       </div>
-<!--      <div @click="searchAreaToggle" data-flag="0" class="search_btn col-4 d-flex justify-content-end">-->
-<!--        <i class="bi bi-search mt-2 nav-link nav-link-white " style="font-size: 30px !important"></i>-->
-<!--      </div>-->
+      <!--      <div @click="searchAreaToggle" data-flag="0" class="search_btn col-4 d-flex justify-content-end">-->
+      <!--        <i class="bi bi-search mt-2 nav-link nav-link-white " style="font-size: 30px !important"></i>-->
+      <!--      </div>-->
       <div class="col-4 d-flex justify-content-end">
         <router-link to="/ar/" class="text-light mt-3 text-end"  type="button">
-          العربیه
+          فارسی
         </router-link>
       </div>
     </div>
@@ -63,23 +63,23 @@
       <div class="side-menu-body d-grid" style="height: calc(100vh - 150px)">
         <ul class="side-menu-ul">
           <li @click="sideMenuToggle">
-            <router-link class=" side-menu-navlink" to="/"><img src="/img/house.png" class="m-2" alt="">خانه
+            <router-link class=" side-menu-navlink" to="/ar/"><img src="/img/house.png" class="m-2" alt="">خانه
             </router-link>
           </li>
           <li @click="sideMenuToggle">
-            <router-link class=" side-menu-navlink" to="/products"><img src="/img/cookie.png" class="m-2" alt="">محصولات
+            <router-link class=" side-menu-navlink" to="/ar/products"><img src="/img/cookie.png" class="m-2" alt="">محصولات
             </router-link>
           </li>
           <li @click="sideMenuToggle">
-            <router-link class=" side-menu-navlink" to="/recipes"><img src="/img/cake.png" class="m-2" alt="">دستور پخت
+            <router-link class=" side-menu-navlink" to="/ar/recipes"><img src="/img/cake.png" class="m-2" alt="">دستور پخت
             </router-link>
           </li>
           <li @click="sideMenuToggle">
-            <router-link class=" side-menu-navlink" to="/about"><img src="/img/people.png" class="m-2" alt="">درباره ما
+            <router-link class=" side-menu-navlink" to="/ar/about"><img src="/img/people.png" class="m-2" alt="">درباره ما
             </router-link>
           </li>
           <li @click="sideMenuToggle">
-            <router-link class=" side-menu-navlink" to="/teasers"><img src="/img/YouTube.png" class="m-2" alt="">تیزر ها
+            <router-link class=" side-menu-navlink" to="/ar/teasers"><img src="/img/YouTube.png" class="m-2" alt="">تیزر ها
             </router-link>
           </li>
         </ul>

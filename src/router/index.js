@@ -44,6 +44,51 @@ const routes = [
         name: 'teasers',
         component: () => import(/* webpackChunkName: "teasers" */ '../views/Teasers')
     },
+
+    //********************************* arabic routes **********************************************************
+    {
+        path: '/ar/',
+        name: 'homeArabic',
+        component: () => import(/* webpackChunkName: "about" */ '../views/ar/Home')
+    },
+    {
+        path: '/ar/about',
+        name: 'aboutArabic',
+        component: () => import(/* webpackChunkName: "about" */ '../views/ar/About')
+    },
+
+    {
+        path: '/ar/products',
+        name: 'productsArabic',
+        component: () => import(/* webpackChunkName: "products" */ '../views/ar/Products')
+    },
+
+    {
+        path: '/ar/product/:id',
+        name: 'productArabic',
+        params: true,
+        props: true,
+        component: () => import(/* webpackChunkName: "product" */ '../views/ar/Product')
+    },
+
+    {
+        path: '/ar/recipes',
+        name: 'recipesArabic',
+        component: () => import(/* webpackChunkName: "recipes" */ '../views/ar/Recipes')
+    },
+
+    {
+        path: '/ar/recipe/:id',
+        name: 'recipeArabic',
+        params: true,
+        props: true,
+        component: () => import(/* webpackChunkName: "recipe" */ '../views/ar/Recipe')
+    },
+    {
+        path: '/ar/teasers',
+        name: 'teasersArabic',
+        component: () => import(/* webpackChunkName: "teasers" */ '../views/ar/Teasers')
+    },
 ]
 
 const router = createRouter({
