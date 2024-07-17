@@ -47,11 +47,12 @@
 <!--      <div @click="searchAreaToggle" data-flag="0" class="search_btn col-4 d-flex justify-content-end">-->
 <!--        <i class="bi bi-search mt-2 nav-link nav-link-white " style="font-size: 30px !important"></i>-->
 <!--      </div>-->
-      <div class="col-4 d-flex justify-content-end">
-        <router-link to="/ar/" class="text-light mt-3 text-end"  type="button">
-          العربیه
-        </router-link>
-      </div>
+
+<!--      <div class="col-4 d-flex justify-content-end">-->
+<!--        <router-link to="/ar/" class="text-light mt-3 text-end"  type="button">-->
+<!--          العربیه-->
+<!--        </router-link>-->
+<!--      </div>-->
     </div>
 
     <div class="d-lg-none vh-100 side-menu side-menu-start" style="position: fixed; top:0; right: -300px; height: 100vh">
