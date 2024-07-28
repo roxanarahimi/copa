@@ -1,12 +1,19 @@
 <template>
-  <div class="d-flex justify-content-center">
+  <div class="">
     <!--        style="box-shadow: 1px 2px lightgrey"-->
-    <div class="d-none d-lg-block d-lg-flex justify-content-lg-between  category-nav-mobile m-5">
+    <div class="d-none d-lg-block d-lg-flex justify-content-lg-between category-nav-mobile m-5 mb-3 mx-auto">
       <span data-id="all" @click="getData('')"
             class="category-nav-span d-inline-block mx-3 text-center category-nav-active">همه محصولات</span>
-      <span :data-id="item.id" v-for="(item, index) in categories" :key="index" @click="getData(item.id)"
+      <span :data-id="item.id" v-for="(item, index) in rootCats" :key="index" @click="getData(item)"
             class="category-nav-span d-inline-block mx-3 text-center">{{ item.title }}</span>
 
+    </div>
+    <div v-if="(selectedCategory.parent_id !== '0' && selectedCategory.subCategories )|| (selectedCategory.subCategories && selectedCategory.parent_id === '0')"
+         :style="'width:'+(selectedCategory.subCategories?.length||0 )* 130+'px'"
+         class="d-none d-lg-block d-lg-flex justify-content-lg-between category-nav-mobile mx-5 mx-auto" >
+<!--    -->
+      <span :data-id="item.id" v-for="(item, index) in selectedCategory.subCategories" :key="index" @click="getData(item)"
+            class="category-nav-span2 d-inline-block mx-3 text-center ">{{ item.title }}</span>
     </div>
     <div class="d-lg-none category-nav my-5 mx-3" style="position:relative;">
       <div class="row p-0">
@@ -36,7 +43,7 @@
 
 <script>
 
-import {onMounted} from "vue";
+import {computed, onMounted, ref} from "vue";
 
 export default {
   name: "CategoryNav",
@@ -56,24 +63,26 @@ export default {
       }
       let flag = document.querySelector('.category-nav-mobile-btn').getAttribute('data-flag');
       if (flag == 0) {
-        document.querySelector('.category-nav-mobile-options').classList.add('d-none');
+        document.querySelector('.category-nav-mobile-options')?.classList.add('d-none');
         document.querySelector('.category-nav-mobile-btn').setAttribute('data-flag', 1);
       } else {
-        document.querySelector('.category-nav-mobile-options').classList.remove('d-none');
+        document.querySelector('.category-nav-mobile-options')?.classList.remove('d-none');
         document.querySelector('.category-nav-mobile-btn').setAttribute('data-flag', 0);
       }
     };
 
-    const getData = (id) => {
+    const selectedCategory = ref({})
+    const getData = (category) => {
       let myPromise = new Promise(function(resolve, reject) {
-        _props.getData(id);
+        _props.getData(category.id || '');
+        if(category.parent_id === '0'){
+          selectedCategory.value = category;
+        }
         resolve();
         reject();
       });
       myPromise.then(
-          function(value) {
-              handleCategoryNav();
-          },
+          function(value) { handleCategoryNav() },
           function(error) { console.log(error) }
       );
       categoryNavToggle();
@@ -82,18 +91,26 @@ export default {
     const handleCategoryNav = ()=>{
       document.querySelectorAll('.category-nav-span').forEach((element) => {
         element.addEventListener('click', () => {
-          document.querySelector('.category-nav-active').classList.remove('category-nav-active');
-          element.classList.add('category-nav-active');
+          document.querySelector('.category-nav-active')?.classList.remove('category-nav-active');
+          document.querySelector('.category-nav-active2')?.classList.remove('category-nav-active2');
+          element?.classList.add('category-nav-active');
           document.querySelector('.all_li').innerHTML=element.innerHTML;
+        })
+      });
+     document.querySelectorAll('.category-nav-span2').forEach((element) => {
+        element.addEventListener('click', () => {
+          document.querySelector('.category-nav-active2')?.classList.remove('category-nav-active2');
+          element?.classList.add('category-nav-active2');
+          // document.querySelector('.all_li').innerHTML=element.innerHTML;
         })
       });
       document.querySelectorAll('.category-nav-li').forEach((element) => {
         element.addEventListener('click', () => {
           document.querySelector('.all_li').innerHTML=element.innerHTML;
-          document.querySelector('.category-nav-active').classList.remove('category-nav-active');
+          document.querySelector('.category-nav-active')?.classList.remove('category-nav-active');
           document.querySelectorAll('.category-nav-span').forEach((el) => {
             if (el.getAttribute('data-id') == element.getAttribute('data-id')){
-              el.classList.add('category-nav-active');
+              el?.classList.add('category-nav-active');
             }
           });
 
@@ -121,12 +138,16 @@ export default {
 
       });
     }
+    // const rootCats = ref([]);
+
     onMounted(() => {
-      handleMobileNav()
+      handleMobileNav();
     })
 
+
     return {
-      categoryNavToggle, getData, handleCategoryNav, handleMobileNav
+      categoryNavToggle, getData, handleCategoryNav, handleMobileNav, selectedCategory,
+      rootCats: computed(()=>_props.categories?.filter(function(el){return el.parent_id === "0";})),
 
     }
   }
@@ -143,16 +164,18 @@ export default {
   z-index: 200;
 }
 
-.category-nav-span {
+.category-nav-span ,.category-nav-span2 {
+  cursor: pointer;
+}
+.category-nav span {
+  text-wrap: none;
+  cursor: pointer;
+}
+.category-nav-li,.category-nav-li2 {
   cursor: pointer;
 }
 
-.category-nav-li {
-  cursor: pointer;
-}
-
-.category-nav,
-.category-nav-mobile {
+.category-nav, .category-nav-mobile {
   /*background-color: #FFE7D7;*/
   background-color: whitesmoke;
   border-radius: 14px;
@@ -165,12 +188,9 @@ export default {
   line-height: 43px;
 }
 
-.category-nav span {
-  text-wrap: none;
-  cursor: pointer;
-}
 
-:deep(.category-nav-active) {
+
+:deep(.category-nav-active) ,:deep(.category-nav-active2) {
   border-radius: 10px;
   font-weight: 600;
   color: white;
