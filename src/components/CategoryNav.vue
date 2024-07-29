@@ -74,9 +74,15 @@ export default {
     const selectedCategory = ref({})
     const getData = (category) => {
       let myPromise = new Promise(function(resolve, reject) {
-        _props.getData(category.id || '');
+        // if(!category.subcategories.length){
+          _props.getData(category.id || '');
+        // }
+
         if(category.parent_id === '0'){
           selectedCategory.value = category;
+        }
+        if(category === ''){
+          selectedCategory.value = {};
         }
         resolve();
         reject();

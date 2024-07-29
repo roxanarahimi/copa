@@ -16,9 +16,9 @@
            <product-card :product="item"/>
          </div>
        </div>
-       <div v-else class="text-center mb-5">
-         <p>محصولی موجود نمیباشد</p>
-       </div>
+<!--       <div v-else class="text-center mb-5">-->
+<!--         <p>محصولی موجود نمیباشد</p>-->
+<!--       </div>-->
      </div>
     </div>
 
