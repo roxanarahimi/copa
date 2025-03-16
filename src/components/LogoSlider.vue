@@ -70,7 +70,7 @@ export default {
           '/img/copa.png',
           '/img/select.png',
           '/img/king.png',
-          '/img/fast.png',
+          // '/img/fast.png',
           '/img/gandom.png',
           '/img/pearliez.png',
           '/img/ocopa.png',
