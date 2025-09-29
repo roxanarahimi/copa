@@ -13,7 +13,7 @@ export default createStore({
   // modules: {
   // }
   state: {
-    panelUrl: 'https://panel.copa.webagent.ir',
+    panelUrl: 'https:dev-amadeh.ir:8086',
     foodSlider: null,
     recipeCats: null,
     recipes: null,
