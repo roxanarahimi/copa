@@ -13,7 +13,7 @@ export default createStore({
   // modules: {
   // }
   state: {
-    panelUrl: 'https://mucopa.dev-amadeh.ir',
+    panelUrl: 'https://mycopa.dev-amadeh.ir',
     foodSlider: null,
     recipeCats: null,
     recipes: null,
